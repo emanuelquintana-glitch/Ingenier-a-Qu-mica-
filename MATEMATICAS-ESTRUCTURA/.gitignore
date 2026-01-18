@@ -107,7 +107,7 @@ yarn-error.log*
 *.synctex(busy)
 *.synctex.gz
 *.synctex.gz(busy)
-*.pdfsync
+#*.pdfsync
 
 ## Archivos de knitr
 *-concordance.tex
@@ -321,7 +321,7 @@ pkgs/
 *.gif
 *.bmp
 *.tiff
-*.pdf
+#*.pdf
 
 # Documentos generados
 *.docx
