@@ -1,0 +1,401 @@
+# ============================================================================
+# .gitignore para Proyecto de Matemáticas - Ingeniería Química
+# ============================================================================
+
+# ============================================================================
+# ARCHIVOS DEL SISTEMA
+# ============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+~*
+*.orig
+*.bak
+*.tmp
+*.temp
+desktop.ini
+*.lnk
+
+# ============================================================================
+# ENTORNOS VIRTUALES Y PAQUETES
+# ============================================================================
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ============================================================================
+# ARCHIVOS LaTeX
+# ============================================================================
+## Archivos auxiliares
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Archivos de índice
+*.idx
+*.ilg
+*.ind
+*.inx
+
+## Archivos de glosario
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+## Archivos de bibliografía
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Archivos de estilo de bibliografía
+*.bst
+
+## Archivos misceláneos
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Archivos de knitr
+*-concordance.tex
+*.tikz
+
+## Archivos de listados
+*.lol
+
+## Archivos de minipage
+*.mp
+
+## Archivos de nomenclatura
+*.nlo
+
+## Archivos de configuración
+*.latexmk
+
+## PDFs generados (opcional, si quieres ignorar los PDFs)
+#*.pdf
+
+# ============================================================================
+# ARCHIVOS Quarto
+# ============================================================================
+_quarto/
+_quarto.yml
+*.quarto/
+
+# ============================================================================
+# ARCHIVOS Jupyter/Notebooks
+# ============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# ============================================================================
+# ARCHIVOS R/RMarkdown
+# ============================================================================
+*.RData
+*.Rhistory
+*.Rproj.user/
+*.Rcheck/
+.Rproj.user/
+
+# ============================================================================
+# ARCHIVOS PYTHON
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================================================
+# ARCHIVOS DE ENTORNOS Y CONFIGURACIONES
+# ============================================================================
+# Entornos virtuales
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Conda
+*.conda
+conda-env/
+envs/
+pkgs/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# ARCHIVOS DE DATOS Y OUTPUTS
+# ============================================================================
+# Datos grandes o generados
+*.csv
+*.xlsx
+*.xls
+*.feather
+*.parquet
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Imágenes generadas
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.pdf
+
+# Documentos generados
+*.docx
+*.pptx
+*.odt
+
+# ============================================================================
+# ARCHIVOS DE LOGS Y TEMPORALES
+# ============================================================================
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log
+*.log.*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ============================================================================
+# ARCHIVOS DE DEPLOY Y CONSTRUCCIÓN
+# ============================================================================
+# direnv
+.direnv/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+
+# ============================================================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ============================================================================
+# Archivos personales
+personal/
+private/
+secret/
+config.local.*
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# ============================================================================
+# EXCEPCIONES (archivos que SÍ queremos incluir)
+# ============================================================================
+# No ignorar archivos de configuración importantes
+!.gitignore
+!README.md
+!LICENSE
+!requirements.txt
+!environment.yml
+!Makefile
+!setup.py
+!pyproject.toml
+
+# No ignorar archivos de datos de ejemplo pequeños
+!data/sample.csv
+!data/example.*
+
+# ============================================================================
+# NOTAS:
+# ============================================================================
+# Para incluir un archivo que normalmente estaría ignorado, usa:
+# !nombre_del_archivo
+#
+# Ejemplo: !config.local.yml
+#
+# Para ignorar un archivo en un directorio específico:
+# /ruta/al/archivo.txt
+#
+# Para ignorar todos los archivos con una extensión:
+# *.ext
