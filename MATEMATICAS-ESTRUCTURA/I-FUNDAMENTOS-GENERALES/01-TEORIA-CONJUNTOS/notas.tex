@@ -1,0 +1,1897 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  twocolumn,
+  10pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage[]{libertinus}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1.5cm,top=2.5cm,bottom=2cm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Fundamentos Matemáticos para Ingenieros},
+  pdfauthor={Emanuel Quintana Silva},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Fundamentos Matemáticos para Ingenieros}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{El lenguaje silencioso que construye la realidad científica}
+\author{Emanuel Quintana Silva}
+\date{2026-01-01}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title={📰 THE SCIENCE TIMES \textbar{} INVESTIGACIÓN ESPECIAL}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, left=2mm]
+
+\textbf{DEEP DIVE} • PAPULA BAND 1 • MATHEMATIK FÜR INGENIEURE • ENERO
+2026
+
+\end{tcolorbox}
+
+\section{Introducción: El Átomo de la Lógica
+Moderna}\label{introducciuxf3n-el-uxe1tomo-de-la-luxf3gica-moderna}
+
+La transición del pensamiento escolar a la estructura de las disciplinas
+científicas superiores requiere más que fórmulas; exige un marco lógico
+riguroso que funcione como fundamento inquebrantable. Basado en la obra
+monumental de Lothar Papula, \emph{Mathematik für Ingenieure und
+Naturwissenschaftler} (Papula, 2024), la teoría de conjuntos se presenta
+no como un tema periférico, sino como el \textbf{átomo conceptual} sobre
+el cual se construye todo el edificio matemático moderno.
+
+\section{Teoría de Conjuntos: Ontología de la
+Unidad}\label{teoruxeda-de-conjuntos-ontologuxeda-de-la-unidad}
+
+\subsection{Definición Fundamental}\label{definiciuxf3n-fundamental}
+
+Un \textbf{conjunto} es la agrupación de objetos bien diferenciados en
+una unidad conceptual. Esta definición, aparentemente elemental,
+constituye la piedra angular del análisis matemático y establece el
+fundamento para todas las estructuras algebraicas superiores utilizadas
+en ingeniería y ciencias naturales.
+
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Principio de Pertenencia Absoluta}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, left=2mm]
+
+Para que un sistema califique como conjunto válido, la relación de
+pertenencia debe ser \textbf{absoluta y verificable} sin ambigüedad. No
+existen zonas grises: un elemento pertenece (\(\in\)) o es completamente
+ajeno (\(\notin\)) al conjunto. Esta dicotomía lógica es fundamental.
+
+\end{tcolorbox}
+
+\subsubsection{Características Estructurales
+Esenciales}\label{caracteruxedsticas-estructurales-esenciales}
+
+Los elementos constituyentes de un conjunto deben satisfacer dos
+condiciones ineludibles:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ser \textbf{distintos entre sí} (sin duplicados)
+\item
+  Estar \textbf{bien diferenciados} (sin ambigüedad en su identidad)
+\end{enumerate}
+
+Una propiedad crucial es que el \textbf{orden de enumeración carece de
+relevancia lógica}, estableciendo así una estructura simétrica
+fundamental que distingue a los conjuntos de otras estructuras como las
+tuplas ordenadas.
+
+\subsection{Dualidad Representacional}\label{dualidad-representacional}
+
+En el diseño científico riguroso, la claridad de representación es un
+valor supremo. Los conjuntos se manifiestan en dos formas
+complementarias, cada una optimizada para contextos específicos.
+
+\subsubsection{Método Descriptivo
+(Intensional)}\label{muxe9todo-descriptivo-intensional}
+
+Define la esencia del conjunto mediante una propiedad característica.
+Este es el método obligatorio para sistemas infinitos donde la
+enumeración completa resulta imposible o impráctica.
+
+\[M = \{x \mid x \text{ satisface la propiedad } E \}\]
+
+\textbf{Ejemplo:} El conjunto de números naturales se define como:
+\[\mathbb{N} = \{x \mid x \in \mathbb{Z} \text{ y } x \geq 0\}\]
+
+\subsubsection{Método Enumerativo
+(Extensional)}\label{muxe9todo-enumerativo-extensional}
+
+Representa el listado directo y explícito de todos los elementos.
+Proporciona evidencia tangible y concreta para colecciones finitas.
+
+\[M_3 = \{ -3, -2, -1, 0, 1, 2, 3 \}\]
+
+La enumeración explícita elimina toda ambigüedad interpretativa y
+permite verificación inmediata de pertenencia mediante inspección
+directa.
+
+\subsection{Operaciones Fundamentales entre
+Conjuntos}\label{operaciones-fundamentales-entre-conjuntos}
+
+Las operaciones entre conjuntos (\emph{Mengenoperationen}) constituyen
+el álgebra fundamental que permite construir estructuras matemáticas
+arbitrariamente complejas a partir de unidades elementales simples.
+
+\subsubsection{Intersección: La Lógica
+Conjuntiva}\label{intersecciuxf3n-la-luxf3gica-conjuntiva}
+
+La \textbf{intersección} de dos conjuntos \(A\) y \(B\), simbolizada
+como \(A \cap B\), representa el conjunto de elementos que pertenecen
+simultáneamente a ambos conjuntos.
+
+\textbf{Definición Formal de Intersección}
+
+\[A \cap B = \{x \mid x \in A \text{ y } x \in B\}\]
+
+La intersección captura la noción lógica del operador ``Y''
+(conjunción), siendo fundamental en la resolución de sistemas de
+inecuaciones.
+
+\textbf{Aplicación en Sistemas de Inecuaciones}
+
+Considere el sistema: \begin{align}
+2x - 4 &> 0 \quad \Rightarrow \quad x > 2 \\
+x &< 3
+\end{align}
+
+La solución es la intersección de ambos conjuntos solución:
+\[L = \{x \mid 2 < x < 3\} = (2,3)\]
+
+Este intervalo abierto representa todos los valores que satisfacen
+simultáneamente ambas condiciones.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(ggforce)}
+
+\CommentTok{\# Crear datos para los círculos}
+\NormalTok{circulos }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{),}
+  \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{),}
+  \AttributeTok{r =} \FunctionTok{c}\NormalTok{(}\FloatTok{1.2}\NormalTok{, }\FloatTok{1.2}\NormalTok{),}
+  \AttributeTok{conjunto =} \FunctionTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{)}
+\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_circle}\NormalTok{(}\AttributeTok{data =}\NormalTok{ circulos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x0 =}\NormalTok{ x, }\AttributeTok{y0 =}\NormalTok{ y, }\AttributeTok{r =}\NormalTok{ r, }\AttributeTok{fill =}\NormalTok{ conjunto), }
+              \AttributeTok{alpha =} \FloatTok{0.3}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"A"} \OtherTok{=} \StringTok{"\#326891"}\NormalTok{, }\StringTok{"B"} \OtherTok{=} \StringTok{"\#cc0000"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \SpecialCharTok{{-}}\FloatTok{0.6}\NormalTok{, }\AttributeTok{y =} \DecValTok{0}\NormalTok{, }\AttributeTok{label =} \StringTok{"A"}\NormalTok{, }\AttributeTok{size =} \DecValTok{6}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \FloatTok{2.1}\NormalTok{, }\AttributeTok{y =} \DecValTok{0}\NormalTok{, }\AttributeTok{label =} \StringTok{"B"}\NormalTok{, }\AttributeTok{size =} \DecValTok{6}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \FloatTok{0.75}\NormalTok{, }\AttributeTok{y =} \DecValTok{0}\NormalTok{, }\AttributeTok{label =} \StringTok{"A ∩ B"}\NormalTok{, }\AttributeTok{size =} \DecValTok{4}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#008060"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_fixed}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme\_void}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{,}
+        \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Intersección A ∩ B"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/unnamed-chunk-2-1.pdf}
+
+}
+
+\caption{Diagrama de Venn: Intersección de conjuntos A y B}
+
+\end{figure}%
+
+\subsubsection{Unión: La Lógica Disyuntiva
+Inclusiva}\label{uniuxf3n-la-luxf3gica-disyuntiva-inclusiva}
+
+La \textbf{unión} de conjuntos \(A\) y \(B\), denotada \(A \cup B\),
+agrupa todos los elementos que pertenecen al menos a uno de los
+conjuntos.
+
+\textbf{Definición Formal de Unión}
+
+\[A \cup B = \{x \mid x \in A \text{ o } x \in B\}\]
+
+El operador ``o'' es \textbf{inclusivo}: los elementos comunes a ambos
+conjuntos forman parte integral de la unión, a diferencia de la
+disyunción exclusiva.
+
+\textbf{Ejemplo con Conjuntos Finitos}
+
+Sean \(A = \{1, 2, 3, 4\}\) y \(B = \{1, 5, 6, 7\}\). La unión produce:
+\[A \cup B = \{1, 2, 3, 4, 5, 6, 7\}\]
+
+Observe que el elemento común (1) aparece una sola vez en la unión.
+
+\textbf{Unión de Intervalos Continuos}
+
+Para \(M_1 = \{x \mid 0 \le x \le 1\}\) y
+\(M_2 = \{x \mid 1 \le x \le 5\}\):
+\[M_1 \cup M_2 = \{x \mid 0 \le x \le 5\} = [0,5]\]
+
+Los intervalos se fusionan en uno continuo al compartir el punto
+frontera \(x=1\).
+
+\subsubsection{Diferencia: El Operador de
+Exclusión}\label{diferencia-el-operador-de-exclusiuxf3n}
+
+La \textbf{diferencia} \(A \setminus B\) (léase ``\(A\) menos \(B\)'')
+contiene exclusivamente los elementos de \(A\) que no pertenecen a
+\(B\).
+
+\textbf{Definición Formal de Diferencia}
+
+\[A \setminus B = \{x \mid x \in A \text{ y } x \notin B\}\]
+
+\textbf{Construcción de \(\mathbb{N}^*\)}
+
+Los números naturales positivos se definen mediante diferencia:
+\[\mathbb{N}^* = \mathbb{N} \setminus \{0\} = \{1, 2, 3, 4, \dots\}\]
+
+\textbf{Diferencia con Conjuntos Finitos}
+
+Si \(A = \{1, 5, 7, 10\}\) y \(B = \{0, 1, 7, 15\}\), entonces:
+\[A \setminus B = \{5, 10\}\]
+
+Solo permanecen los elementos exclusivos de \(A\).
+
+\subsection{Relaciones de Inclusión y
+Jerarquía}\label{relaciones-de-inclusiuxf3n-y-jerarquuxeda}
+
+Un conjunto \(A\) es \textbf{subconjunto} de \(B\) (denotado
+\(A \subseteq B\)) si todo elemento de \(A\) pertenece también a \(B\).
+
+\subsubsection{Identidad y el Conjunto
+Vacío}\label{identidad-y-el-conjunto-vacuxedo}
+
+Dos conjuntos \(A\) y \(B\) son \textbf{iguales} (\(A=B\)) si y solo si
+contienen exactamente los mismos elementos.
+
+El \textbf{conjunto vacío} (\(\emptyset\)) carece de elementos pero es,
+paradójicamente, el concepto más fundamental: permite definir sistemas
+sin soluciones y garantiza que la estructura lógica nunca colapse. Es
+subconjunto de todo conjunto.
+
+\section{Los Números Reales: Base del
+Análisis}\label{los-nuxfameros-reales-base-del-anuxe1lisis}
+
+El conjunto \(\mathbb{R}\) de números reales constituye la columna
+vertebral del análisis matemático aplicado, representando la completitud
+numérica absoluta necesaria para modelar fenómenos continuos.
+
+\subsection{Estructura Tripartita}\label{estructura-tripartita}
+
+Los números reales incluyen tres categorías exhaustivas:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Decimales finitos:} Incluyen todos los enteros y fracciones
+  que terminan (\(\frac{3}{4} = 0.75\))
+\item
+  \textbf{Decimales infinitos periódicos:} Números racionales cuya
+  expansión decimal se repite (\(\frac{1}{3} = 0.\overline{3}\))
+\item
+  \textbf{Decimales infinitos no periódicos:} Números irracionales como
+  \(\sqrt{2}\), \(\pi\), \(e\)
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Correspondencia Biunívoca}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm]
+
+Existe una relación uno a uno perfecta entre \(\mathbb{R}\) y los puntos
+de la recta numérica dirigida (\emph{Zahlengerade}), estableciendo una
+\textbf{geometrización completa} de la aritmética donde cada número
+tiene una posición única y cada posición representa un único número.
+
+\end{tcolorbox}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Crear la recta numérica}
+\NormalTok{datos\_puntos }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{2.718}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.414}\NormalTok{, }\DecValTok{2}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{3}\NormalTok{),}
+  \AttributeTok{y =} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{9}\NormalTok{),}
+  \AttributeTok{etiqueta =} \FunctionTok{c}\NormalTok{(}\StringTok{"{-}e"}\NormalTok{, }\StringTok{"{-}2"}\NormalTok{, }\StringTok{"{-}1"}\NormalTok{, }\StringTok{"0"}\NormalTok{, }\StringTok{"1"}\NormalTok{, }\StringTok{"√2"}\NormalTok{, }\StringTok{"2"}\NormalTok{, }\StringTok{"5/2"}\NormalTok{, }\StringTok{"3"}\NormalTok{),}
+  \AttributeTok{tipo =} \FunctionTok{c}\NormalTok{(}\StringTok{"Irracional"}\NormalTok{, }\StringTok{"Entero"}\NormalTok{, }\StringTok{"Entero"}\NormalTok{, }\StringTok{"Entero"}\NormalTok{, }\StringTok{"Entero"}\NormalTok{, }
+           \StringTok{"Irracional"}\NormalTok{, }\StringTok{"Entero"}\NormalTok{, }\StringTok{"Racional"}\NormalTok{, }\StringTok{"Entero"}\NormalTok{)}
+\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(datos\_puntos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.5}\NormalTok{, }\AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{(}\AttributeTok{length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\StringTok{"cm"}\NormalTok{))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ tipo), }\AttributeTok{size =} \DecValTok{4}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ etiqueta, }\AttributeTok{color =}\NormalTok{ tipo), }\AttributeTok{vjust =} \SpecialCharTok{{-}}\FloatTok{1.5}\NormalTok{, }\AttributeTok{size =} \DecValTok{4}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"Entero"} \OtherTok{=} \StringTok{"\#121212"}\NormalTok{, }
+                                \StringTok{"Racional"} \OtherTok{=} \StringTok{"\#008060"}\NormalTok{,}
+                                \StringTok{"Irracional"} \OtherTok{=} \StringTok{"\#326891"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \SpecialCharTok{{-}}\DecValTok{3}\SpecialCharTok{:}\DecValTok{4}\NormalTok{, }\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.title =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.ticks.y =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.grid =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{legend.position =} \StringTok{"top"}\NormalTok{,}
+        \AttributeTok{legend.title =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"La Recta Numérica Real ℝ"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in geom_hline(yintercept = 0, size = 1.5, arrow = arrow(length =
+unit(0.3, : Ignoring unknown parameters: `arrow`
+\end{verbatim}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
+}
+
+\caption{La recta numérica real con ejemplos de diferentes tipos}
+
+\end{figure}%
+
+\subsection{Operaciones y Clausura}\label{operaciones-y-clausura}
+
+En \(\mathbb{R}\) se definen cuatro operaciones fundamentales: adición,
+sustracción, multiplicación y división. Una característica esencial es
+la \textbf{clausura}: la suma, diferencia y producto de dos reales
+siempre produce otro real.
+
+Para el cociente existe la restricción absoluta de que \textbf{la
+división por cero no está definida}.
+
+\subsection{Leyes Algebraicas
+Fundamentales}\label{leyes-algebraicas-fundamentales}
+
+El sistema \((\mathbb{R}, +, \cdot)\) está gobernado por tres familias
+de leyes:
+
+\textbf{Leyes Conmutativas}
+
+\[a + b = b + a \quad ; \quad a \cdot b = b \cdot a\]
+
+El orden de los operandos no altera el resultado.
+
+\textbf{Leyes Asociativas}
+
+\[a + (b + c) = (a + b) + c\]
+\[a \cdot (b \cdot c) = (a \cdot b) \cdot c\]
+
+La agrupación mediante paréntesis no modifica el valor final.
+
+\textbf{Ley Distributiva}
+
+\[a \cdot (b + c) = a \cdot b + a \cdot c\]
+
+Conecta multiplicación con adición, fundamento del álgebra de
+polinomios.
+
+\section{Orden, Inecuaciones y Valor
+Absoluto}\label{orden-inecuaciones-y-valor-absoluto}
+
+\subsection{Anordnung der Zahlen}\label{anordnung-der-zahlen}
+
+Para cualquier par de números reales \(a, b \in \mathbb{R}\), se cumple
+exactamente una de tres relaciones mutuamente excluyentes: \(a < b\),
+\(a = b\), o \(a > b\). Esta \textbf{tricotomía} es la esencia del orden
+total en \(\mathbb{R}\).
+
+\textbf{Interpretación Geométrica:}
+
+\begin{itemize}
+\tightlist
+\item
+  \(a < b\): El punto \(a\) se sitúa a la \textbf{izquierda} de \(b\) en
+  la recta
+\item
+  \(a > b\): El punto \(a\) se sitúa a la \textbf{derecha} de \(b\)
+\item
+  \(a = b\): Ambos puntos coinciden espacialmente
+\end{itemize}
+
+\subsection{Transformaciones de
+Inecuaciones}\label{transformaciones-de-inecuaciones}
+
+Las inecuaciones se resuelven mediante \textbf{transformaciones
+equivalentes} que preservan el conjunto solución:
+
+\textbf{Reglas Fundamentales}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Adición/Sustracción:} Sumar o restar cualquier término
+  \(T(x)\) en ambos lados preserva el signo de desigualdad.
+\item
+  \textbf{Multiplicación por positivos:} Si \(c > 0\):
+  \[a < b \Rightarrow ac < bc\]
+\item
+  \textbf{Multiplicación por negativos:} Si \(c < 0\), el signo se
+  invierte: \[a < b \Rightarrow ac > bc\]
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia Crítica}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, titlerule=0mm, left=2mm]
+
+Cuando se multiplica o divide por un término variable \(T(x)\), se debe
+realizar \textbf{distinción de casos} (\emph{Fallunterscheidung}) según
+el signo de \(T(x)\) en diferentes intervalos.
+
+\end{tcolorbox}
+
+\textbf{Inecuación Racional con Distinción de Casos}
+
+Resolver: \(\frac{2x-1}{x+2} > 3\)
+
+\textbf{Caso 1:} \(x+2 > 0\) (es decir, \(x > -2\))
+\[2x-1 > 3(x+2) \Rightarrow x < -7\] Contradicción con \(x > -2\): sin
+soluciones válidas.
+
+\textbf{Caso 2:} \(x+2 < 0\) (es decir, \(x < -2\))
+\[2x-1 < 3(x+2) \Rightarrow x > -7\] Intersección: \(-7 < x < -2\) ✓
+
+\textbf{Solución final:} \(L = \{x \mid -7 < x < -2\} = (-7,-2)\)
+
+\subsection{Valor Absoluto: Función de
+Distancia}\label{valor-absoluto-funciuxf3n-de-distancia}
+
+El \textbf{valor absoluto} \(|a|\) representa la distancia del número
+\(a\) al origen en la recta numérica.
+
+\textbf{Definición por Casos}
+
+\[|a| = \begin{cases} 
+a & \text{si } a \geq 0 \\
+-a & \text{si } a < 0
+\end{cases}\]
+
+\textbf{Propiedades Fundamentales:}
+
+\begin{itemize}
+\tightlist
+\item
+  \(|a| \geq 0\) para todo \(a \in \mathbb{R}\)
+\item
+  \(|x - a|\) mide la distancia entre \(x\) y \(a\)
+\item
+  \(|a \cdot b| = |a| \cdot |b|\)
+\item
+  Desigualdad triangular: \(|a + b| \leq |a| + |b|\)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{)}
+\NormalTok{datos }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{rep}\NormalTok{(x, }\DecValTok{3}\NormalTok{),}
+  \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}\FunctionTok{abs}\NormalTok{(x), }\FunctionTok{abs}\NormalTok{(x }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{), }\FunctionTok{abs}\NormalTok{(x) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{),}
+  \AttributeTok{funcion =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"y = |x|"}\NormalTok{, }\StringTok{"y = |x{-}1|"}\NormalTok{, }\StringTok{"y = |x| {-} 1"}\NormalTok{), }\AttributeTok{each =} \FunctionTok{length}\NormalTok{(x))}
+\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y, }\AttributeTok{color =}\NormalTok{ funcion)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#326891"}\NormalTok{, }\StringTok{"\#cc0000"}\NormalTok{, }\StringTok{"\#008060"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"top"}\NormalTok{,}
+        \AttributeTok{legend.title =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"x"}\NormalTok{, }\AttributeTok{y =} \StringTok{"y"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Funciones de Valor Absoluto"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+}
+
+\caption{Gráficas de funciones con valor absoluto}
+
+\end{figure}%
+
+\subsection{Ecuaciones con Valor
+Absoluto}\label{ecuaciones-con-valor-absoluto}
+
+Las ecuaciones que contienen términos con valor absoluto requieren
+\textbf{distinción de casos} basada en el signo del argumento.
+
+\textbf{Resolución Exhaustiva por Casos}
+
+Resolver: \(|x + 2| - 2|x - 3| = 4\)
+
+\textbf{Puntos críticos:} \(x = -2\) y \(x = 3\) dividen la recta en
+tres intervalos.
+
+\textbf{Caso I} (\(x < -2\)): Ambos argumentos negativos
+\[-(x+2) - 2[-(x-3)] = 4\] \[-x-2+2x-6 = 4 \Rightarrow x = 12\]
+\(12 \not< -2\): solución falsa (\emph{Scheinlösung}) ✗
+
+\textbf{Caso II} (\(-2 \leq x \leq 3\)): Primer argumento positivo,
+segundo negativo \[(x+2) - 2[-(x-3)] = 4\]
+\[x+2+2x-6 = 4 \Rightarrow 3x = 8 \Rightarrow x = \frac{8}{3}\]
+\(\frac{8}{3} \approx 2.67 \in [-2,3]\): solución válida ✓
+
+\textbf{Caso III} (\(x > 3\)): Ambos argumentos positivos
+\[(x+2) - 2(x-3) = 4\] \[x+2-2x+6 = 4 \Rightarrow x = 4\] \(4 > 3\):
+solución válida ✓
+
+\textbf{Conjunto solución:} \(L = \left\{\frac{8}{3}, 4\right\}\)
+
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Verificación Obligatoria}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, titlerule=0mm, left=2mm]
+
+Siempre se debe verificar cada solución candidata en la ecuación
+original para descartar soluciones falsas generadas por transformaciones
+no equivalentes.
+
+\end{tcolorbox}
+
+\section{Teoría Exhaustiva de
+Ecuaciones}\label{teoruxeda-exhaustiva-de-ecuaciones}
+
+\subsection{Ecuaciones Lineales}\label{ecuaciones-lineales}
+
+La forma canónica \(ax + b = 0\) con \(a \neq 0\) posee exactamente una
+solución: \[x = -\frac{b}{a}\]
+
+Esta solución única refleja la estructura de campo de \(\mathbb{R}\).
+
+\subsection{Ecuaciones Cuadráticas}\label{ecuaciones-cuadruxe1ticas}
+
+La forma general \(ax^2 + bx + c = 0\) se normaliza dividiendo por \(a\)
+para obtener \(x^2 + px + q = 0\) donde \(p = b/a\) y \(q = c/a\).
+
+\textbf{Fórmula \(p,q\) (Forma Normalizada)}
+
+\[x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}\]
+
+El \textbf{discriminante} \(D = \left(\frac{p}{2}\right)^2 - q\)
+determina completamente la naturaleza de las soluciones:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Discriminante & Soluciones \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(D > 0\) & Dos raíces reales distintas \\
+\(D = 0\) & Raíz doble (solución única) \\
+\(D < 0\) & Sin soluciones reales (soluciones complejas) \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{)}
+
+\NormalTok{datos }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{x =} \FunctionTok{rep}\NormalTok{(x, }\DecValTok{3}\NormalTok{),}
+  \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}
+\NormalTok{    x}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{4}\SpecialCharTok{*}\NormalTok{x }\SpecialCharTok{+} \DecValTok{3}\NormalTok{,     }\CommentTok{\# D \textgreater{} 0: dos raíces}
+\NormalTok{    x}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{4}\SpecialCharTok{*}\NormalTok{x }\SpecialCharTok{+} \DecValTok{4}\NormalTok{,     }\CommentTok{\# D = 0: raíz doble}
+\NormalTok{    x}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{4}\SpecialCharTok{*}\NormalTok{x }\SpecialCharTok{+} \DecValTok{5}      \CommentTok{\# D \textless{} 0: sin raíces}
+\NormalTok{  ),}
+  \AttributeTok{caso =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"D \textgreater{} 0 (dos raíces)"}\NormalTok{, }\StringTok{"D = 0 (raíz doble)"}\NormalTok{, }\StringTok{"D \textless{} 0 (sin raíces)"}\NormalTok{), }
+             \AttributeTok{each =} \FunctionTok{length}\NormalTok{(x))}
+\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y, }\AttributeTok{color =}\NormalTok{ caso)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#008060"}\NormalTok{, }\StringTok{"\#326891"}\NormalTok{, }\StringTok{"\#cc0000"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"top"}\NormalTok{,}
+        \AttributeTok{legend.title =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"x"}\NormalTok{, }\AttributeTok{y =} \StringTok{"f(x)"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Parábolas y el Discriminante"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/unnamed-chunk-5-1.pdf}
+
+}
+
+\caption{Comportamiento de funciones cuadráticas según el discriminante}
+
+\end{figure}%
+
+\subsection{Ecuaciones de Grado
+Superior}\label{ecuaciones-de-grado-superior}
+
+\textbf{Teorema Fundamental del Álgebra}
+
+Una ecuación polinómica de grado \(n\) tiene como máximo \(n\)
+soluciones reales (contando multiplicidades).
+
+\subsubsection{Ecuaciones
+Bicuadráticas}\label{ecuaciones-bicuadruxe1ticas}
+
+Para ecuaciones del tipo \(ax^4 + bx^2 + c = 0\):
+
+\textbf{Método de Sustitución}
+
+\textbf{Paso 1:} Sustituir \(u = x^2\), obteniendo:
+\(au^2 + bu + c = 0\)
+
+\textbf{Paso 2:} Resolver la ecuación cuadrática en \(u\) usando la
+fórmula \(p,q\).
+
+\textbf{Paso 3:} Para cada solución positiva \(u_i > 0\), calcular:
+\(x = \pm\sqrt{u_i}\)
+
+\textbf{Importante:} Solo las soluciones \(u > 0\) producen valores
+reales de \(x\).
+
+\subsubsection{Esquema de Horner}\label{esquema-de-horner}
+
+Es una herramienta fundamental para:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Evaluar polinomios de forma eficiente
+\item
+  Realizar división sintética
+\item
+  Reducir el grado de una ecuación si se conoce una raíz
+\end{enumerate}
+
+Si \(x_1\) es raíz de \(P(x)\), el esquema permite dividir por
+\((x - x_1)\) y reducir el grado del polinomio.
+
+\subsection{Ecuaciones Irracionales}\label{ecuaciones-irracionales}
+
+Son aquellas donde la incógnita aparece bajo un signo de raíz.
+
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia Crítica}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, titlerule=0mm, left=2mm]
+
+Elevar al cuadrado \textbf{NO} es una transformación equivalente. Pueden
+aparecer \textbf{soluciones falsas} (\emph{Scheinlösungen}).
+
+La verificación en la ecuación original es \textbf{OBLIGATORIA}.
+
+\end{tcolorbox}
+
+\textbf{Método de resolución:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Aislar el término con la raíz
+\item
+  Elevar al cuadrado (o a la potencia correspondiente)
+\item
+  Resolver la ecuación resultante
+\item
+  \textbf{Verificar todas las soluciones} en la ecuación original
+\end{enumerate}
+
+\section{Sistemas de Ecuaciones
+Lineales}\label{sistemas-de-ecuaciones-lineales}
+
+Un sistema de \(m\) ecuaciones con \(n\) incógnitas se puede representar
+de forma matricial como:
+
+\[A\mathbf{x} = \mathbf{c}\]
+
+\subsection{Representación Matricial
+Completa}\label{representaciuxf3n-matricial-completa}
+
+\textbf{Componentes del Sistema}
+
+\textbf{Matriz de coeficientes:} \[A = \begin{pmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} \\ 
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}\]
+
+\textbf{Vector solución:}
+\[\mathbf{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}\]
+
+\textbf{Vector de términos constantes:}
+\[\mathbf{c} = \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_m \end{pmatrix}\]
+
+\textbf{Matriz ampliada:} \[(A|\mathbf{c}) = \begin{pmatrix} 
+a_{11} & \cdots & a_{1n} & | & c_1 \\ 
+\vdots & \ddots & \vdots & | & \vdots \\
+a_{m1} & \cdots & a_{mn} & | & c_m
+\end{pmatrix}\]
+
+\subsection{Algoritmo de Gauss}\label{algoritmo-de-gauss}
+
+El método de eliminación de Gauss transforma el sistema en forma
+escalonada mediante \textbf{transformaciones equivalentes}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Intercambiar} dos ecuaciones entre sí
+\item
+  \textbf{Multiplicar} una ecuación por un número distinto de cero
+\item
+  \textbf{Sumar} a una ecuación un múltiplo de otra
+\end{enumerate}
+
+\textbf{Objetivo:} Alcanzar una \textbf{forma trapezoidal} donde todos
+los elementos bajo la diagonal principal sean cero.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ejemplo: Resolver sistema 3x3 usando eliminación de Gauss}
+\CommentTok{\# Sistema:}
+\CommentTok{\#   x + 2y +  z = 9}
+\CommentTok{\#  2x {-}  y + 3z = 8}
+\CommentTok{\#  3x + 2y + 4z = 15}
+
+\CommentTok{\# Matriz ampliada}
+\NormalTok{A\_ampliada }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}
+  \DecValTok{1}\NormalTok{,  }\DecValTok{2}\NormalTok{,  }\DecValTok{1}\NormalTok{,  }\DecValTok{9}\NormalTok{,}
+  \DecValTok{2}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,  }\DecValTok{3}\NormalTok{,  }\DecValTok{8}\NormalTok{,}
+  \DecValTok{3}\NormalTok{,  }\DecValTok{2}\NormalTok{,  }\DecValTok{4}\NormalTok{, }\DecValTok{15}
+\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Matriz ampliada inicial (A|c):}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Matriz ampliada inicial (A|c):
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(A\_ampliada)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    1    9
+[2,]    2   -1    3    8
+[3,]    3    2    4   15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Paso 1: Eliminar x en filas 2 y 3}
+\NormalTok{A\_ampliada[}\DecValTok{2}\NormalTok{,] }\OtherTok{\textless{}{-}}\NormalTok{ A\_ampliada[}\DecValTok{2}\NormalTok{,] }\SpecialCharTok{{-}} \DecValTok{2} \SpecialCharTok{*}\NormalTok{ A\_ampliada[}\DecValTok{1}\NormalTok{,]}
+\NormalTok{A\_ampliada[}\DecValTok{3}\NormalTok{,] }\OtherTok{\textless{}{-}}\NormalTok{ A\_ampliada[}\DecValTok{3}\NormalTok{,] }\SpecialCharTok{{-}} \DecValTok{3} \SpecialCharTok{*}\NormalTok{ A\_ampliada[}\DecValTok{1}\NormalTok{,]}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Después de eliminar x en filas 2 y 3:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Después de eliminar x en filas 2 y 3:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(A\_ampliada)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    1    9
+[2,]    0   -5    1  -10
+[3,]    0   -4    1  -12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Paso 2: Eliminar y en fila 3}
+\NormalTok{A\_ampliada[}\DecValTok{3}\NormalTok{,] }\OtherTok{\textless{}{-}}\NormalTok{ A\_ampliada[}\DecValTok{3}\NormalTok{,] }\SpecialCharTok{{-}}\NormalTok{ (A\_ampliada[}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{] }\SpecialCharTok{/}\NormalTok{ A\_ampliada[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{]) }\SpecialCharTok{*}\NormalTok{ A\_ampliada[}\DecValTok{2}\NormalTok{,]}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Forma escalonada (trapezoidal):}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Forma escalonada (trapezoidal):
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(A\_ampliada)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2] [,3] [,4]
+[1,]    1    2  1.0    9
+[2,]    0   -5  1.0  -10
+[3,]    0    0  0.2   -4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Paso 3: Sustitución regresiva}
+\NormalTok{z }\OtherTok{\textless{}{-}}\NormalTok{ A\_ampliada[}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{] }\SpecialCharTok{/}\NormalTok{ A\_ampliada[}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ (A\_ampliada[}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ A\_ampliada[}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{] }\SpecialCharTok{*}\NormalTok{ z) }\SpecialCharTok{/}\NormalTok{ A\_ampliada[}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{]}
+\NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ (A\_ampliada[}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ A\_ampliada[}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{] }\SpecialCharTok{*}\NormalTok{ z }\SpecialCharTok{{-}}\NormalTok{ A\_ampliada[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{] }\SpecialCharTok{*}\NormalTok{ y) }\SpecialCharTok{/}\NormalTok{ A\_ampliada[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Solución del sistema:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Solución del sistema:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"x = \%.4f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+x = 33.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"y = \%.4f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, y))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+y = -2.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"z = \%.4f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, z))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+z = -20.0000
+\end{verbatim}
+
+\subsection{Análisis de Solubilidad}\label{anuxe1lisis-de-solubilidad}
+
+\textbf{Criterio Fundamental de Solubilidad}
+
+Un sistema es resoluble (tiene al menos una solución) si y solo si:
+\(Rg(A) = Rg(A|\mathbf{c})\)
+
+donde \(Rg\) denota el rango de la matriz.
+
+\textbf{Clasificación según el rango \(r\):}
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{Comportamiento de sistemas lineales según el
+rango}\label{tbl-sistemas}\tabularnewline
+\toprule\noalign{}
+Condición & Tipo de Sistema & Soluciones \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Condición & Tipo de Sistema & Soluciones \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(r = n\) & Compatible determinado & Solución única \\
+\(r < n\) & Compatible indeterminado & Infinitas (\(n-r\) parámetros) \\
+\(Rg(A) < Rg(A\|\mathbf{c})\) & Incompatible & Sin solución \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(patchwork)}
+
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{)}
+
+\CommentTok{\# Sistema con solución única}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =} \SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{, }\AttributeTok{intercept =} \DecValTok{3}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#326891"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =} \DecValTok{2}\NormalTok{, }\AttributeTok{intercept =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#cc0000"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \DecValTok{2}\NormalTok{, }\AttributeTok{y =} \DecValTok{2}\NormalTok{), }\AttributeTok{size =} \DecValTok{4}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#008060"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \DecValTok{2}\NormalTok{, }\AttributeTok{y =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{label =} \StringTok{"(2, 2)"}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#008060"}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{), }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Solución Única"}\NormalTok{, }\AttributeTok{x =} \StringTok{"x"}\NormalTok{, }\AttributeTok{y =} \StringTok{"y"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+
+\CommentTok{\# Sistema con infinitas soluciones (rectas coincidentes)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =} \DecValTok{1}\NormalTok{, }\AttributeTok{intercept =} \DecValTok{1}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#326891"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =} \DecValTok{1}\NormalTok{, }\AttributeTok{intercept =} \DecValTok{1}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#cc0000"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \DecValTok{2}\NormalTok{, }\AttributeTok{y =} \FloatTok{3.5}\NormalTok{, }\AttributeTok{label =} \StringTok{"Infinitas soluciones}\SpecialCharTok{\textbackslash{}n}\StringTok{(rectas coincidentes)"}\NormalTok{, }
+           \AttributeTok{color =} \StringTok{"\#326891"}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{), }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Infinitas Soluciones"}\NormalTok{, }\AttributeTok{x =} \StringTok{"x"}\NormalTok{, }\AttributeTok{y =} \StringTok{"y"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+
+\CommentTok{\# Sistema sin solución (rectas paralelas)}
+\NormalTok{p3 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =} \DecValTok{1}\NormalTok{, }\AttributeTok{intercept =} \DecValTok{1}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#326891"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{slope =} \DecValTok{1}\NormalTok{, }\AttributeTok{intercept =} \DecValTok{3}\NormalTok{, }\AttributeTok{color =} \StringTok{"\#cc0000"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \DecValTok{2}\NormalTok{, }\AttributeTok{y =} \FloatTok{4.5}\NormalTok{, }\AttributeTok{label =} \StringTok{"Sin solución}\SpecialCharTok{\textbackslash{}n}\StringTok{(paralelas)"}\NormalTok{, }
+           \AttributeTok{color =} \StringTok{"\#cc0000"}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{), }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Sin Solución"}\NormalTok{, }\AttributeTok{x =} \StringTok{"x"}\NormalTok{, }\AttributeTok{y =} \StringTok{"y"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{))}
+
+\NormalTok{p1 }\SpecialCharTok{+}\NormalTok{ p2 }\SpecialCharTok{+}\NormalTok{ p3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+}
+
+\caption{Visualización de sistemas 2x2: único, infinitos y sin solución}
+
+\end{figure}%
+
+\subsection{Regla de Cramer}\label{regla-de-cramer}
+
+Para sistemas cuadrados (\(n \times n\)) con matriz regular
+(\(\det(A) \neq 0\)):
+
+\textbf{Fórmula de Cramer}
+
+\(x_i = \frac{\det(A_i)}{\det(A)}\)
+
+donde \(A_i\) es la matriz \(A\) con la columna \(i\) reemplazada por el
+vector \(\mathbf{c}\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ejemplo con Regla de Cramer}
+\CommentTok{\# Sistema: 2x + 3y = 8}
+\CommentTok{\#          x {-} y = {-}1}
+
+\NormalTok{A }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{c\_vec }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Sistema de ecuaciones:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Sistema de ecuaciones:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"2x + 3y = 8}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+2x + 3y = 8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{" x {-}  y = {-}1}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ x -  y = -1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Determinante de A}
+\NormalTok{det\_A }\OtherTok{\textless{}{-}} \FunctionTok{det}\NormalTok{(A)}
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"det(A) = \%.0f}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{, det\_A))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+det(A) = -5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# A1: reemplazar primera columna con c}
+\NormalTok{A1 }\OtherTok{\textless{}{-}}\NormalTok{ A}
+\NormalTok{A1[,}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ c\_vec}
+\NormalTok{det\_A1 }\OtherTok{\textless{}{-}} \FunctionTok{det}\NormalTok{(A1)}
+
+\CommentTok{\# A2: reemplazar segunda columna con c}
+\NormalTok{A2 }\OtherTok{\textless{}{-}}\NormalTok{ A}
+\NormalTok{A2[,}\DecValTok{2}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ c\_vec}
+\NormalTok{det\_A2 }\OtherTok{\textless{}{-}} \FunctionTok{det}\NormalTok{(A2)}
+
+\CommentTok{\# Soluciones}
+\NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ det\_A1 }\SpecialCharTok{/}\NormalTok{ det\_A}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ det\_A2 }\SpecialCharTok{/}\NormalTok{ det\_A}
+
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"x = det(A1)/det(A) = \%.0f/\%.0f = \%.0f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, det\_A1, det\_A, x))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+x = det(A1)/det(A) = -5/-5 = 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"y = det(A2)/det(A) = \%.0f/\%.0f = \%.0f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, det\_A2, det\_A, y))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+y = det(A2)/det(A) = -10/-5 = 2
+\end{verbatim}
+
+\subsection{Aplicación: Circuitos
+Eléctricos}\label{aplicaciuxf3n-circuitos-eluxe9ctricos}
+
+Las \textbf{Reglas de Kirchhoff} permiten analizar redes eléctricas
+usando sistemas de ecuaciones lineales.
+
+\textbf{Análisis de Red con Tres Corrientes}
+
+Para un circuito con resistencias \(R_1, R_2, R_3\) y fuente de tensión
+\(U\):
+
+\textbf{Regla de los Nudos (\emph{Knotenpunktsregel}):}
+\(I_1 - I_2 - I_3 = 0\)
+
+La suma de corrientes entrantes y salientes en un nudo es cero.
+
+\textbf{Reglas de las Mallas (\emph{Maschenregel}):}
+\(R_1 I_1 + R_2 I_2 = U\) \(R_2 I_2 - R_3 I_3 = 0\)
+
+En cada malla, la suma de tensiones es cero.
+
+\textbf{Matriz del Sistema:} \(A = \begin{pmatrix}
+1 & -1 & -1 \\
+R_1 & R_2 & 0 \\
+0 & R_2 & -R_3
+\end{pmatrix}\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Resolver circuito eléctrico}
+\CommentTok{\# Valores: R1 = 2Ω, R2 = 3Ω, R3 = 4Ω, U = 12V}
+
+\NormalTok{R1 }\OtherTok{\textless{}{-}} \DecValTok{2}
+\NormalTok{R2 }\OtherTok{\textless{}{-}} \DecValTok{3}
+\NormalTok{R3 }\OtherTok{\textless{}{-}} \DecValTok{4}
+\NormalTok{U }\OtherTok{\textless{}{-}} \DecValTok{12}
+
+\CommentTok{\# Matriz de coeficientes}
+\NormalTok{A\_circuito }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}
+  \DecValTok{1}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}
+\NormalTok{  R1, R2, }\DecValTok{0}\NormalTok{,}
+  \DecValTok{0}\NormalTok{, R2, }\SpecialCharTok{{-}}\NormalTok{R3}
+\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+
+\NormalTok{c\_circuito }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, U, }\DecValTok{0}\NormalTok{)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Sistema del circuito eléctrico:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Sistema del circuito eléctrico:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"I1 {-} I2 {-} I3 = 0}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+I1 - I2 - I3 = 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"\%.0f*I1 + \%.0f*I2 = \%.0f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, R1, R2, U))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+2*I1 + 3*I2 = 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"\%.0f*I2 {-} \%.0f*I3 = 0}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{, R2, R3))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+3*I2 - 4*I3 = 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Resolver usando solve()}
+\NormalTok{corrientes }\OtherTok{\textless{}{-}} \FunctionTok{solve}\NormalTok{(A\_circuito, c\_circuito)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Corrientes del circuito:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Corrientes del circuito:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"I1 = \%.4f A}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, corrientes[}\DecValTok{1}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+I1 = 3.2308 A
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"I2 = \%.4f A}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, corrientes[}\DecValTok{2}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+I2 = 1.8462 A
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"I3 = \%.4f A}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, corrientes[}\DecValTok{3}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+I3 = 1.3846 A
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Verificación}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Verificación de las ecuaciones:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Verificación de las ecuaciones:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"I1 {-} I2 {-} I3 = \%.6f (≈ 0) ✓}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }
+\NormalTok{            corrientes[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ corrientes[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ corrientes[}\DecValTok{3}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+I1 - I2 - I3 = -0.000000 (≈ 0) ✓
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"R1*I1 + R2*I2 = \%.4f (= \%.0f) ✓}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }
+\NormalTok{            R1}\SpecialCharTok{*}\NormalTok{corrientes[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{+}\NormalTok{ R2}\SpecialCharTok{*}\NormalTok{corrientes[}\DecValTok{2}\NormalTok{], U))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+R1*I1 + R2*I2 = 12.0000 (= 12) ✓
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"R2*I2 {-} R3*I3 = \%.6f (≈ 0) ✓}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }
+\NormalTok{            R2}\SpecialCharTok{*}\NormalTok{corrientes[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ R3}\SpecialCharTok{*}\NormalTok{corrientes[}\DecValTok{3}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+R2*I2 - R3*I3 = 0.000000 (≈ 0) ✓
+\end{verbatim}
+
+\section{Triángulo de Pascal y Binomio de
+Newton}\label{triuxe1ngulo-de-pascal-y-binomio-de-newton}
+
+\subsection{Construcción del Triángulo de
+Pascal}\label{construcciuxf3n-del-triuxe1ngulo-de-pascal}
+
+El \textbf{Triángulo de Pascal} es un esquema numérico infinito que
+permite determinar directamente los \textbf{coeficientes binomiales}
+\(\binom{n}{k}\).
+
+\textbf{Reglas de Construcción}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Bordes laterales:} Todos son 1
+\item
+  \textbf{Valores internos:} Cada número es la suma de los dos números
+  superiores
+\item
+  \textbf{Propiedad recursiva:}
+  \(\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}\)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Función para calcular coeficientes binomiales}
+\NormalTok{generar\_pascal }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n\_filas) \{}
+\NormalTok{  triangulo }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+  \ControlFlowTok{for}\NormalTok{ (n }\ControlFlowTok{in} \DecValTok{0}\SpecialCharTok{:}\NormalTok{(n\_filas}\DecValTok{{-}1}\NormalTok{)) \{}
+\NormalTok{    fila }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\NormalTok{n, }\ControlFlowTok{function}\NormalTok{(k) }\FunctionTok{choose}\NormalTok{(n, k))}
+\NormalTok{    triangulo[[n}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]] }\OtherTok{\textless{}{-}}\NormalTok{ fila}
+\NormalTok{  \}}
+  \FunctionTok{return}\NormalTok{(triangulo)}
+\NormalTok{\}}
+
+\CommentTok{\# Generar triángulo}
+\NormalTok{n\_filas }\OtherTok{\textless{}{-}} \DecValTok{10}
+\NormalTok{triangulo }\OtherTok{\textless{}{-}} \FunctionTok{generar\_pascal}\NormalTok{(n\_filas)}
+
+\CommentTok{\# Crear datos para visualización}
+\NormalTok{datos\_pascal }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{()}
+\ControlFlowTok{for}\NormalTok{ (n }\ControlFlowTok{in} \DecValTok{0}\SpecialCharTok{:}\NormalTok{(n\_filas}\DecValTok{{-}1}\NormalTok{)) \{}
+\NormalTok{  fila }\OtherTok{\textless{}{-}}\NormalTok{ triangulo[[n}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]]}
+  \ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in} \DecValTok{0}\SpecialCharTok{:}\NormalTok{n) \{}
+\NormalTok{    datos\_pascal }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(datos\_pascal, }\FunctionTok{data.frame}\NormalTok{(}
+      \AttributeTok{x =}\NormalTok{ k }\SpecialCharTok{{-}}\NormalTok{ n}\SpecialCharTok{/}\DecValTok{2}\NormalTok{,}
+      \AttributeTok{y =} \SpecialCharTok{{-}}\NormalTok{n,}
+      \AttributeTok{valor =}\NormalTok{ fila[k}\SpecialCharTok{+}\DecValTok{1}\NormalTok{],}
+      \AttributeTok{n =}\NormalTok{ n,}
+      \AttributeTok{k =}\NormalTok{ k}
+\NormalTok{    ))}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\CommentTok{\# Visualizar}
+\FunctionTok{ggplot}\NormalTok{(datos\_pascal, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =} \FunctionTok{log10}\NormalTok{(valor }\SpecialCharTok{+} \DecValTok{1}\NormalTok{)), }\AttributeTok{size =} \DecValTok{8}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ valor), }\AttributeTok{color =} \StringTok{"white"}\NormalTok{, }\AttributeTok{fontface =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{"\#326891"}\NormalTok{, }\AttributeTok{high =} \StringTok{"\#cc0000"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_void}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{,}
+        \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{size =} \DecValTok{14}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Triángulo de Pascal"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_fixed}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/triangulo-pascal-1.pdf}
+
+}
+
+\caption{Triángulo de Pascal (primeras 10 filas)}
+
+\end{figure}%
+
+\subsection{Binomio de Newton}\label{binomio-de-newton}
+
+El triángulo de Pascal proporciona los coeficientes para la expansión de
+potencias de binomios:
+
+\textbf{Fórmula del Binomio de Newton}
+
+\((a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k\)
+
+donde \(\binom{n}{k}\) se lee ``\(n\) sobre \(k\)'' y se calcula como:
+\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)
+
+\textbf{Ejemplos de Desarrollo}
+
+\textbf{Para \(n = 2\):} Coeficientes 1, 2, 1
+\((a + b)^2 = a^2 + 2ab + b^2\)
+
+\textbf{Para \(n = 3\):} Coeficientes 1, 3, 3, 1
+\((a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3\)
+
+\textbf{Para \(n = 4\):} Coeficientes 1, 4, 6, 4, 1
+\((a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Función para expandir (a + b)\^{}n simbólicamente}
+\NormalTok{expandir\_binomio }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n) \{}
+\NormalTok{  coef }\OtherTok{\textless{}{-}} \FunctionTok{choose}\NormalTok{(n, }\DecValTok{0}\SpecialCharTok{:}\NormalTok{n)}
+  \FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"(a + b)\^{}\%d = "}\NormalTok{, n))}
+  
+\NormalTok{  terminos }\OtherTok{\textless{}{-}} \FunctionTok{character}\NormalTok{()}
+  \ControlFlowTok{for}\NormalTok{ (k }\ControlFlowTok{in} \DecValTok{0}\SpecialCharTok{:}\NormalTok{n) \{}
+    \CommentTok{\# Coeficiente}
+    \ControlFlowTok{if}\NormalTok{ (coef[k}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&\&}\NormalTok{ k }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\&\&}\NormalTok{ k }\SpecialCharTok{\textless{}}\NormalTok{ n) \{}
+\NormalTok{      coef\_str }\OtherTok{\textless{}{-}} \StringTok{""}
+\NormalTok{    \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (coef[k}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) \{}
+\NormalTok{      coef\_str }\OtherTok{\textless{}{-}} \ControlFlowTok{if}\NormalTok{ (k }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{||}\NormalTok{ k }\SpecialCharTok{==}\NormalTok{ n) }\StringTok{"1"} \ControlFlowTok{else} \StringTok{""}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{      coef\_str }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(coef[k}\SpecialCharTok{+}\DecValTok{1}\NormalTok{])}
+\NormalTok{    \}}
+    
+    \CommentTok{\# Potencia de a}
+\NormalTok{    pot\_a }\OtherTok{\textless{}{-}}\NormalTok{ n }\SpecialCharTok{{-}}\NormalTok{ k}
+\NormalTok{    a\_str }\OtherTok{\textless{}{-}} \ControlFlowTok{if}\NormalTok{ (pot\_a }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\StringTok{""} \ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (pot\_a }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\StringTok{"a"} \ControlFlowTok{else} \FunctionTok{sprintf}\NormalTok{(}\StringTok{"a\^{}\%d"}\NormalTok{, pot\_a)}
+    
+    \CommentTok{\# Potencia de b}
+\NormalTok{    pot\_b }\OtherTok{\textless{}{-}}\NormalTok{ k}
+\NormalTok{    b\_str }\OtherTok{\textless{}{-}} \ControlFlowTok{if}\NormalTok{ (pot\_b }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\StringTok{""} \ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (pot\_b }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\StringTok{"b"} \ControlFlowTok{else} \FunctionTok{sprintf}\NormalTok{(}\StringTok{"b\^{}\%d"}\NormalTok{, pot\_b)}
+    
+    \CommentTok{\# Combinar}
+\NormalTok{    termino }\OtherTok{\textless{}{-}} \FunctionTok{paste0}\NormalTok{(coef\_str, a\_str, b\_str)}
+    \ControlFlowTok{if}\NormalTok{ (termino }\SpecialCharTok{==} \StringTok{""}\NormalTok{) termino }\OtherTok{\textless{}{-}} \StringTok{"1"}
+\NormalTok{    terminos }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(terminos, termino)}
+\NormalTok{  \}}
+  
+  \FunctionTok{cat}\NormalTok{(}\FunctionTok{paste}\NormalTok{(terminos, }\AttributeTok{collapse =} \StringTok{" + "}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{\}}
+
+\CommentTok{\# Ejemplos}
+\ControlFlowTok{for}\NormalTok{ (n }\ControlFlowTok{in} \DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{) \{}
+  \FunctionTok{expandir\_binomio}\NormalTok{(n)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+(a + b)^2 = 1a^2 + 2ab + 1b^2 
+
+(a + b)^3 = 1a^3 + 3a^2b + 3ab^2 + 1b^3 
+
+(a + b)^4 = 1a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + 1b^4 
+
+(a + b)^5 = 1a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + 1b^5 
+
+(a + b)^6 = 1a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + 1b^6 
+\end{verbatim}
+
+\section{Método de Newton para Ecuaciones No
+Lineales}\label{muxe9todo-de-newton-para-ecuaciones-no-lineales}
+
+Para ecuaciones trascendentes o complejas sin solución analítica, el
+\textbf{Método de Newton} (\emph{Tangentenverfahren}) proporciona
+aproximaciones iterativas de alta precisión.
+
+\textbf{Fórmula Iterativa de Newton}
+
+\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)
+
+\textbf{Características:} - Convergencia cuadrática cerca de la raíz -
+Requiere calcular la derivada \(f'(x)\) - Sensible a la elección del
+punto inicial \(x_0\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Función y su derivada}
+\NormalTok{f }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) x}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{2}
+\NormalTok{f\_prima }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) }\DecValTok{2}\SpecialCharTok{*}\NormalTok{x}
+
+\CommentTok{\# Método de Newton}
+\NormalTok{newton }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x0, f, f\_prima, }\AttributeTok{tol =} \FloatTok{1e{-}10}\NormalTok{, }\AttributeTok{max\_iter =} \DecValTok{20}\NormalTok{) \{}
+\NormalTok{  x }\OtherTok{\textless{}{-}}\NormalTok{ x0}
+\NormalTok{  iteraciones }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{n =} \DecValTok{0}\NormalTok{, }\AttributeTok{x =}\NormalTok{ x0, }\AttributeTok{fx =} \FunctionTok{f}\NormalTok{(x0))}
+  
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{max\_iter) \{}
+\NormalTok{    x\_nuevo }\OtherTok{\textless{}{-}}\NormalTok{ x }\SpecialCharTok{{-}} \FunctionTok{f}\NormalTok{(x) }\SpecialCharTok{/} \FunctionTok{f\_prima}\NormalTok{(x)}
+\NormalTok{    iteraciones }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(iteraciones, }\FunctionTok{data.frame}\NormalTok{(}
+      \AttributeTok{n =}\NormalTok{ i, }
+      \AttributeTok{x =}\NormalTok{ x\_nuevo, }
+      \AttributeTok{fx =} \FunctionTok{f}\NormalTok{(x\_nuevo)}
+\NormalTok{    ))}
+    
+    \ControlFlowTok{if}\NormalTok{ (}\FunctionTok{abs}\NormalTok{(x\_nuevo }\SpecialCharTok{{-}}\NormalTok{ x) }\SpecialCharTok{\textless{}}\NormalTok{ tol) }\ControlFlowTok{break}
+\NormalTok{    x }\OtherTok{\textless{}{-}}\NormalTok{ x\_nuevo}
+\NormalTok{  \}}
+  
+  \FunctionTok{return}\NormalTok{(iteraciones)}
+\NormalTok{\}}
+
+\CommentTok{\# Ejecutar Newton con x0 = 2}
+\NormalTok{resultado }\OtherTok{\textless{}{-}} \FunctionTok{newton}\NormalTok{(}\AttributeTok{x0 =} \DecValTok{2}\NormalTok{, f, f\_prima)}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Método de Newton para encontrar √2}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Método de Newton para encontrar √2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Ecuación: f(x) = x² {-} 2 = 0}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Ecuación: f(x) = x² - 2 = 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(resultado, }\AttributeTok{digits =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  n           x              fx
+1 0 2.000000000 2.000000000e+00
+2 1 1.500000000 2.500000000e-01
+3 2 1.416666667 6.944444444e-03
+4 3 1.414215686 6.007304883e-06
+5 4 1.414213562 4.510614104e-12
+6 5 1.414213562 4.440892099e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Visualización}
+\NormalTok{x\_vals }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\FloatTok{0.5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.01}\NormalTok{)}
+\NormalTok{datos\_func }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_vals, }\AttributeTok{y =} \FunctionTok{f}\NormalTok{(x\_vals))}
+
+\CommentTok{\# Crear gráfico}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data =}\NormalTok{ datos\_func, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{y =}\NormalTok{ y), }
+            \AttributeTok{color =} \StringTok{"\#326891"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \FunctionTok{sqrt}\NormalTok{(}\DecValTok{2}\NormalTok{), }\AttributeTok{linetype =} \StringTok{"dotted"}\NormalTok{, }
+             \AttributeTok{color =} \StringTok{"\#008060"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"x"}\NormalTok{, }\AttributeTok{y =} \StringTok{"f(x)"}\NormalTok{, }
+       \AttributeTok{title =} \StringTok{"Método de Newton: f(x) = x² {-} 2"}\NormalTok{)}
+
+\CommentTok{\# Añadir iteraciones}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{min}\NormalTok{(}\DecValTok{4}\NormalTok{, }\FunctionTok{nrow}\NormalTok{(resultado))) \{}
+\NormalTok{  xi }\OtherTok{\textless{}{-}}\NormalTok{ resultado}\SpecialCharTok{$}\NormalTok{x[i]}
+\NormalTok{  yi }\OtherTok{\textless{}{-}}\NormalTok{ resultado}\SpecialCharTok{$}\NormalTok{fx[i]}
+  
+  \CommentTok{\# Punto}
+\NormalTok{  p }\OtherTok{\textless{}{-}}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ xi, }\AttributeTok{y =}\NormalTok{ yi), }
+                      \AttributeTok{color =} \StringTok{"\#cc0000"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{)}
+  
+  \CommentTok{\# Tangente (solo primeras 3 iteraciones)}
+  \ControlFlowTok{if}\NormalTok{ (i }\SpecialCharTok{\textless{}=} \DecValTok{3}\NormalTok{) \{}
+\NormalTok{    m }\OtherTok{\textless{}{-}} \FunctionTok{f\_prima}\NormalTok{(xi)}
+\NormalTok{    x\_tang }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\FunctionTok{max}\NormalTok{(}\FloatTok{0.5}\NormalTok{, xi }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{), }\FunctionTok{min}\NormalTok{(}\DecValTok{3}\NormalTok{, xi }\SpecialCharTok{+} \DecValTok{1}\NormalTok{), }\AttributeTok{length.out =} \DecValTok{50}\NormalTok{)}
+\NormalTok{    y\_tang }\OtherTok{\textless{}{-}}\NormalTok{ yi }\SpecialCharTok{+}\NormalTok{ m }\SpecialCharTok{*}\NormalTok{ (x\_tang }\SpecialCharTok{{-}}\NormalTok{ xi)}
+    
+\NormalTok{    p }\OtherTok{\textless{}{-}}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_tang, }\AttributeTok{y =}\NormalTok{ y\_tang), }
+                       \AttributeTok{color =} \StringTok{"\#e67e22"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }
+                       \AttributeTok{alpha =} \FloatTok{0.7}\NormalTok{)}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\FunctionTok{print}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/metodo-newton-1.pdf}
+
+}
+
+\caption{Convergencia del Método de Newton para f(x) = x² - 2}
+
+\end{figure}%
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Probar diferentes puntos iniciales}
+\NormalTok{puntos\_iniciales }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{resultados\_todos }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+
+\ControlFlowTok{for}\NormalTok{ (x0 }\ControlFlowTok{in}\NormalTok{ puntos\_iniciales) \{}
+\NormalTok{  res }\OtherTok{\textless{}{-}} \FunctionTok{newton}\NormalTok{(x0, f, f\_prima, }\AttributeTok{max\_iter =} \DecValTok{10}\NormalTok{)}
+\NormalTok{  res}\SpecialCharTok{$}\NormalTok{x0 }\OtherTok{\textless{}{-}}\NormalTok{ x0}
+\NormalTok{  resultados\_todos[[}\FunctionTok{length}\NormalTok{(resultados\_todos) }\SpecialCharTok{+} \DecValTok{1}\NormalTok{]] }\OtherTok{\textless{}{-}}\NormalTok{ res}
+\NormalTok{\}}
+
+\NormalTok{datos\_conv }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, resultados\_todos)}
+
+\FunctionTok{ggplot}\NormalTok{(datos\_conv, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ n, }\AttributeTok{y =} \FunctionTok{abs}\NormalTok{(x }\SpecialCharTok{{-}} \FunctionTok{sqrt}\NormalTok{(}\DecValTok{2}\NormalTok{)), }\AttributeTok{color =} \FunctionTok{factor}\NormalTok{(x0))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_log10}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#326891"}\NormalTok{, }\StringTok{"\#cc0000"}\NormalTok{, }\StringTok{"\#008060"}\NormalTok{, }\StringTok{"\#e67e22"}\NormalTok{),}
+                     \AttributeTok{name =} \StringTok{"Punto inicial x₀"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"top"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Iteración n"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"|xₙ {-} √2| (escala logarítmica)"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Convergencia del Método de Newton"}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{"Velocidad de convergencia según punto inicial"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in scale_y_log10(): log-10 transformation introduced infinite values.
+log-10 transformation introduced infinite values.
+\end{verbatim}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{notas_files/figure-pdf/newton-comparacion-1.pdf}
+
+}
+
+\caption{Comparación de convergencia según punto inicial}
+
+\end{figure}%
+
+\section{Conclusiones y Síntesis}\label{conclusiones-y-suxedntesis}
+
+\subsection{Resumen Estructural}\label{resumen-estructural}
+
+Los fundamentos matemáticos presentados en este documento constituyen el
+\textbf{andamiaje conceptual} sobre el cual se erigen todas las
+disciplinas científico-técnicas modernas:
+
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Jerarquía Conceptual}, colback=white, breakable, coltitle=black, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Teoría de Conjuntos} → Proporciona el lenguaje lógico
+  fundamental
+\item
+  \textbf{Números Reales} → Establecen la métrica y el continuo
+\item
+  \textbf{Ecuaciones} → Mecanismo de modelado matemático
+\item
+  \textbf{Sistemas Lineales} → Estructura para problemas multivariables
+\item
+  \textbf{Métodos Numéricos} → Herramientas computacionales prácticas
+\end{enumerate}
+
+\end{tcolorbox}
+
+\subsection{Principios Fundamentales para
+Ingenieros}\label{principios-fundamentales-para-ingenieros}
+
+De acuerdo con Papula (2024), el rigor matemático en ingeniería se
+fundamenta en:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Precisión lógica:} Toda afirmación debe ser verificable
+\item
+  \textbf{Coherencia estructural:} Los sistemas deben ser consistentes
+\item
+  \textbf{Aplicabilidad práctica:} Los conceptos deben resolver
+  problemas reales
+\item
+  \textbf{Generalización:} Las soluciones particulares revelan patrones
+  universales
+\end{itemize}
+
+\subsection{Próximos Temas}\label{pruxf3ximos-temas}
+
+En volúmenes posteriores se abordarán:
+
+\begin{itemize}
+\tightlist
+\item
+  Álgebra vectorial y geometría analítica
+\item
+  Funciones y límites
+\item
+  Cálculo diferencial e integral
+\item
+  Ecuaciones diferenciales
+\item
+  Series y transformadas
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Referencias}\label{referencias}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-papula2024}
+Papula, L. (2024). \emph{Mathematik für Ingenieure und
+Naturwissenschafter, Band 1: Ein Lehr- und Arbeitsbuch für das
+Grundstudium} (16., überarbeitete und erweiterte Auflage). Springer
+Vieweg. \url{https://doi.org/10.1007/978-3-658-45802-7}
+
+\end{CSLReferences}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+::: \{.callout-note icon=false\} \#\# 📚 Información del Documento
+
+\textbf{Fuente Principal:} Papula, L. (2024). \emph{Mathematik für
+Ingenieure und Naturwissenschaftler, Band 1} (16.ª edición). Springer
+Vieweg.\\
+\textbf{ISBN:} 978-3-658-45801-0\\
+\textbf{DOI:}
+\href{https://doi.org/10.1007/978-3-658-45802-7}{10.1007/978-3-658-45802-7}
+
+\textbf{Autor del Documento:} Emanuel Quintana Silva\\
+\textbf{Afiliación:} Universidad Pedagógica y Tecnológica de Colombia
+(UPTC)\\
+\textbf{Especialización:} Econometría Computacional \textbar{}
+Aplicaciones R/Python\\
+\textbf{Contacto:} emanuel.quintana@uptc.edu.co\\
+\textbf{ORCID:}
+\href{https://orcid.org/0009-0006-8419-2805}{0009-0006-8419-2805}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{THE SCIENCE TIMES} \textbar{} MATHEMATISCHE GRUNDLAGEN
+\textbar{} ENERO 2026
+
+
+
+\end{document}

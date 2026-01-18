@@ -1,0 +1,1212 @@
+---
+title: "Fundamentos Matemáticos para Ingenieros"
+subtitle: "El lenguaje silencioso que construye la realidad científica"
+author: 
+  - name: "Emanuel Quintana Silva"
+    affiliation: "Universidad Pedagógica y Tecnológica de Colombia (UPTC)"
+    email: "emanuel.quintana@uptc.edu.co"
+    orcid: "0009-0006-8419-2805"
+date: "Enero 2026"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    theme: 
+      light: [cosmo, custom.scss]
+    code-fold: true
+    code-tools: true
+    smooth-scroll: true
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+    css: styles.css
+  pdf:
+    documentclass: article
+    classoption: [twocolumn, 10pt]
+    geometry:
+      - margin=1.5cm
+      - top=2.5cm
+      - bottom=2cm
+    fontfamily: libertinus
+    colorlinks: true
+    toc: true
+    number-sections: true
+    variables:
+      longtable: false
+bibliography: referencias.bib
+csl: apa.csl
+lang: es
+---
+
+```{css, echo=FALSE}
+.header-section-number {
+  color: #326891;
+  font-weight: bold;
+}
+
+.callout-note {
+  border-left: 5px solid #326891;
+  background-color: #f0f7ff;
+}
+
+.callout-warning {
+  border-left: 5px solid #cc0000;
+  background-color: #fff5f5;
+}
+
+.callout-tip {
+  border-left: 5px solid #008060;
+  background-color: #f0fff8;
+}
+
+h1 {
+  color: #121212;
+  border-bottom: 3px solid #121212;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  color: #326891;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.theorem-box {
+  background-color: #e8f4f8;
+  border: 2px solid #326891;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.example-box {
+  background-color: #f0fff8;
+  border: 2px solid #008060;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 0;
+}
+```
+
+::: {.callout-note icon=false}
+## 📰 THE SCIENCE TIMES | INVESTIGACIÓN ESPECIAL
+
+**DEEP DIVE** • PAPULA BAND 1 • MATHEMATIK FÜR INGENIEURE • ENERO 2026
+:::
+
+# Introducción: El Átomo de la Lógica Moderna
+
+La transición del pensamiento escolar a la estructura de las disciplinas científicas superiores requiere más que fórmulas; exige un marco lógico riguroso que funcione como fundamento inquebrantable. Basado en la obra monumental de Lothar Papula, *Mathematik für Ingenieure und Naturwissenschaftler* [@papula2024], la teoría de conjuntos se presenta no como un tema periférico, sino como el **átomo conceptual** sobre el cual se construye todo el edificio matemático moderno.
+
+# Teoría de Conjuntos: Ontología de la Unidad
+
+## Definición Fundamental
+
+Un **conjunto** es la agrupación de objetos bien diferenciados en una unidad conceptual. Esta definición, aparentemente elemental, constituye la piedra angular del análisis matemático y establece el fundamento para todas las estructuras algebraicas superiores utilizadas en ingeniería y ciencias naturales.
+
+::: {.callout-note}
+## Principio de Pertenencia Absoluta
+
+Para que un sistema califique como conjunto válido, la relación de pertenencia debe ser **absoluta y verificable** sin ambigüedad. No existen zonas grises: un elemento pertenece ($\in$) o es completamente ajeno ($\notin$) al conjunto. Esta dicotomía lógica es fundamental.
+:::
+
+### Características Estructurales Esenciales
+
+Los elementos constituyentes de un conjunto deben satisfacer dos condiciones ineludibles:
+
+1. Ser **distintos entre sí** (sin duplicados)
+2. Estar **bien diferenciados** (sin ambigüedad en su identidad)
+
+Una propiedad crucial es que el **orden de enumeración carece de relevancia lógica**, estableciendo así una estructura simétrica fundamental que distingue a los conjuntos de otras estructuras como las tuplas ordenadas.
+
+## Dualidad Representacional
+
+En el diseño científico riguroso, la claridad de representación es un valor supremo. Los conjuntos se manifiestan en dos formas complementarias, cada una optimizada para contextos específicos.
+
+### Método Descriptivo (Intensional)
+
+Define la esencia del conjunto mediante una propiedad característica. Este es el método obligatorio para sistemas infinitos donde la enumeración completa resulta imposible o impráctica.
+
+$$M = \{x \mid x \text{ satisface la propiedad } E \}$$
+
+::: {.example-box}
+**Ejemplo:** El conjunto de números naturales se define como:
+$$\mathbb{N} = \{x \mid x \in \mathbb{Z} \text{ y } x \geq 0\}$$
+:::
+
+### Método Enumerativo (Extensional)
+
+Representa el listado directo y explícito de todos los elementos. Proporciona evidencia tangible y concreta para colecciones finitas.
+
+$$M_3 = \{ -3, -2, -1, 0, 1, 2, 3 \}$$
+
+La enumeración explícita elimina toda ambigüedad interpretativa y permite verificación inmediata de pertenencia mediante inspección directa.
+
+## Operaciones Fundamentales entre Conjuntos
+
+Las operaciones entre conjuntos (*Mengenoperationen*) constituyen el álgebra fundamental que permite construir estructuras matemáticas arbitrariamente complejas a partir de unidades elementales simples.
+
+### Intersección: La Lógica Conjuntiva
+
+La **intersección** de dos conjuntos $A$ y $B$, simbolizada como $A \cap B$, representa el conjunto de elementos que pertenecen simultáneamente a ambos conjuntos.
+
+::: {.theorem-box}
+**Definición Formal de Intersección**
+
+$$A \cap B = \{x \mid x \in A \text{ y } x \in B\}$$
+:::
+
+La intersección captura la noción lógica del operador "Y" (conjunción), siendo fundamental en la resolución de sistemas de inecuaciones.
+
+::: {.example-box}
+**Aplicación en Sistemas de Inecuaciones**
+
+Considere el sistema:
+\begin{align}
+2x - 4 &> 0 \quad \Rightarrow \quad x > 2 \\
+x &< 3
+\end{align}
+
+La solución es la intersección de ambos conjuntos solución:
+$$L = \{x \mid 2 < x < 3\} = (2,3)$$
+
+Este intervalo abierto representa todos los valores que satisfacen simultáneamente ambas condiciones.
+:::
+
+```{r}
+#| echo: true
+#| warning: false
+#| fig-cap: "Diagrama de Venn: Intersección de conjuntos A y B"
+#| fig-width: 6
+#| fig-height: 4
+
+library(ggplot2)
+library(ggforce)
+
+# Crear datos para los círculos
+circulos <- data.frame(
+  x = c(0, 1.5),
+  y = c(0, 0),
+  r = c(1.2, 1.2),
+  conjunto = c("A", "B")
+)
+
+ggplot() +
+  geom_circle(data = circulos, aes(x0 = x, y0 = y, r = r, fill = conjunto), 
+              alpha = 0.3, color = "black", size = 1.2) +
+  scale_fill_manual(values = c("A" = "#326891", "B" = "#cc0000")) +
+  annotate("text", x = -0.6, y = 0, label = "A", size = 6, fontface = "bold") +
+  annotate("text", x = 2.1, y = 0, label = "B", size = 6, fontface = "bold") +
+  annotate("text", x = 0.75, y = 0, label = "A ∩ B", size = 4, color = "#008060") +
+  coord_fixed() +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5, face = "bold")) +
+  labs(title = "Intersección A ∩ B")
+```
+
+### Unión: La Lógica Disyuntiva Inclusiva
+
+La **unión** de conjuntos $A$ y $B$, denotada $A \cup B$, agrupa todos los elementos que pertenecen al menos a uno de los conjuntos.
+
+::: {.theorem-box}
+**Definición Formal de Unión**
+
+$$A \cup B = \{x \mid x \in A \text{ o } x \in B\}$$
+:::
+
+El operador "o" es **inclusivo**: los elementos comunes a ambos conjuntos forman parte integral de la unión, a diferencia de la disyunción exclusiva.
+
+::: {.example-box}
+**Ejemplo con Conjuntos Finitos**
+
+Sean $A = \{1, 2, 3, 4\}$ y $B = \{1, 5, 6, 7\}$. La unión produce:
+$$A \cup B = \{1, 2, 3, 4, 5, 6, 7\}$$
+
+Observe que el elemento común (1) aparece una sola vez en la unión.
+:::
+
+::: {.example-box}
+**Unión de Intervalos Continuos**
+
+Para $M_1 = \{x \mid 0 \le x \le 1\}$ y $M_2 = \{x \mid 1 \le x \le 5\}$:
+$$M_1 \cup M_2 = \{x \mid 0 \le x \le 5\} = [0,5]$$
+
+Los intervalos se fusionan en uno continuo al compartir el punto frontera $x=1$.
+:::
+
+### Diferencia: El Operador de Exclusión
+
+La **diferencia** $A \setminus B$ (léase "$A$ menos $B$") contiene exclusivamente los elementos de $A$ que no pertenecen a $B$.
+
+::: {.theorem-box}
+**Definición Formal de Diferencia**
+
+$$A \setminus B = \{x \mid x \in A \text{ y } x \notin B\}$$
+:::
+
+::: {.example-box}
+**Construcción de $\mathbb{N}^*$**
+
+Los números naturales positivos se definen mediante diferencia:
+$$\mathbb{N}^* = \mathbb{N} \setminus \{0\} = \{1, 2, 3, 4, \dots\}$$
+:::
+
+::: {.example-box}
+**Diferencia con Conjuntos Finitos**
+
+Si $A = \{1, 5, 7, 10\}$ y $B = \{0, 1, 7, 15\}$, entonces:
+$$A \setminus B = \{5, 10\}$$
+
+Solo permanecen los elementos exclusivos de $A$.
+:::
+
+## Relaciones de Inclusión y Jerarquía
+
+Un conjunto $A$ es **subconjunto** de $B$ (denotado $A \subseteq B$) si todo elemento de $A$ pertenece también a $B$.
+
+### Identidad y el Conjunto Vacío
+
+Dos conjuntos $A$ y $B$ son **iguales** ($A=B$) si y solo si contienen exactamente los mismos elementos. 
+
+El **conjunto vacío** ($\emptyset$) carece de elementos pero es, paradójicamente, el concepto más fundamental: permite definir sistemas sin soluciones y garantiza que la estructura lógica nunca colapse. Es subconjunto de todo conjunto.
+
+# Los Números Reales: Base del Análisis
+
+El conjunto $\mathbb{R}$ de números reales constituye la columna vertebral del análisis matemático aplicado, representando la completitud numérica absoluta necesaria para modelar fenómenos continuos.
+
+## Estructura Tripartita
+
+Los números reales incluyen tres categorías exhaustivas:
+
+1. **Decimales finitos:** Incluyen todos los enteros y fracciones que terminan ($\frac{3}{4} = 0.75$)
+2. **Decimales infinitos periódicos:** Números racionales cuya expansión decimal se repite ($\frac{1}{3} = 0.\overline{3}$)
+3. **Decimales infinitos no periódicos:** Números irracionales como $\sqrt{2}$, $\pi$, $e$
+
+::: {.callout-tip}
+## Correspondencia Biunívoca
+
+Existe una relación uno a uno perfecta entre $\mathbb{R}$ y los puntos de la recta numérica dirigida (*Zahlengerade*), estableciendo una **geometrización completa** de la aritmética donde cada número tiene una posición única y cada posición representa un único número.
+:::
+
+```{r}
+#| echo: true
+#| fig-cap: "La recta numérica real con ejemplos de diferentes tipos"
+#| fig-width: 8
+#| fig-height: 3
+
+library(ggplot2)
+
+# Crear la recta numérica
+datos_puntos <- data.frame(
+  x = c(-2.718, -2, -1, 0, 1, 1.414, 2, 2.5, 3),
+  y = rep(0, 9),
+  etiqueta = c("-e", "-2", "-1", "0", "1", "√2", "2", "5/2", "3"),
+  tipo = c("Irracional", "Entero", "Entero", "Entero", "Entero", 
+           "Irracional", "Entero", "Racional", "Entero")
+)
+
+ggplot(datos_puntos, aes(x = x, y = y)) +
+  geom_hline(yintercept = 0, size = 1.5, arrow = arrow(length = unit(0.3, "cm"))) +
+  geom_point(aes(color = tipo), size = 4) +
+  geom_text(aes(label = etiqueta, color = tipo), vjust = -1.5, size = 4, fontface = "bold") +
+  scale_color_manual(values = c("Entero" = "#121212", 
+                                "Racional" = "#008060",
+                                "Irracional" = "#326891")) +
+  scale_x_continuous(breaks = -3:4, limits = c(-4, 4)) +
+  theme_minimal() +
+  theme(axis.title = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        legend.position = "top",
+        legend.title = element_blank()) +
+  labs(title = "La Recta Numérica Real ℝ")
+```
+
+## Operaciones y Clausura
+
+En $\mathbb{R}$ se definen cuatro operaciones fundamentales: adición, sustracción, multiplicación y división. Una característica esencial es la **clausura**: la suma, diferencia y producto de dos reales siempre produce otro real. 
+
+Para el cociente existe la restricción absoluta de que **la división por cero no está definida**.
+
+## Leyes Algebraicas Fundamentales
+
+El sistema $(\mathbb{R}, +, \cdot)$ está gobernado por tres familias de leyes:
+
+::: {.theorem-box}
+**Leyes Conmutativas**
+
+$$a + b = b + a \quad ; \quad a \cdot b = b \cdot a$$
+
+El orden de los operandos no altera el resultado.
+:::
+
+::: {.theorem-box}
+**Leyes Asociativas**
+
+$$a + (b + c) = (a + b) + c$$
+$$a \cdot (b \cdot c) = (a \cdot b) \cdot c$$
+
+La agrupación mediante paréntesis no modifica el valor final.
+:::
+
+::: {.theorem-box}
+**Ley Distributiva**
+
+$$a \cdot (b + c) = a \cdot b + a \cdot c$$
+
+Conecta multiplicación con adición, fundamento del álgebra de polinomios.
+:::
+
+# Orden, Inecuaciones y Valor Absoluto
+
+## Anordnung der Zahlen
+
+Para cualquier par de números reales $a, b \in \mathbb{R}$, se cumple exactamente una de tres relaciones mutuamente excluyentes: $a < b$, $a = b$, o $a > b$. Esta **tricotomía** es la esencia del orden total en $\mathbb{R}$.
+
+**Interpretación Geométrica:**
+
+- $a < b$: El punto $a$ se sitúa a la **izquierda** de $b$ en la recta
+- $a > b$: El punto $a$ se sitúa a la **derecha** de $b$
+- $a = b$: Ambos puntos coinciden espacialmente
+
+## Transformaciones de Inecuaciones
+
+Las inecuaciones se resuelven mediante **transformaciones equivalentes** que preservan el conjunto solución:
+
+::: {.example-box}
+**Reglas Fundamentales**
+
+1. **Adición/Sustracción:** Sumar o restar cualquier término $T(x)$ en ambos lados preserva el signo de desigualdad.
+
+2. **Multiplicación por positivos:** Si $c > 0$:
+   $$a < b \Rightarrow ac < bc$$
+
+3. **Multiplicación por negativos:** Si $c < 0$, el signo se invierte:
+   $$a < b \Rightarrow ac > bc$$
+:::
+
+::: {.callout-warning}
+## Advertencia Crítica
+
+Cuando se multiplica o divide por un término variable $T(x)$, se debe realizar **distinción de casos** (*Fallunterscheidung*) según el signo de $T(x)$ en diferentes intervalos.
+:::
+
+::: {.example-box}
+**Inecuación Racional con Distinción de Casos**
+
+Resolver: $\frac{2x-1}{x+2} > 3$
+
+**Caso 1:** $x+2 > 0$ (es decir, $x > -2$)
+$$2x-1 > 3(x+2) \Rightarrow x < -7$$
+Contradicción con $x > -2$: sin soluciones válidas.
+
+**Caso 2:** $x+2 < 0$ (es decir, $x < -2$)
+$$2x-1 < 3(x+2) \Rightarrow x > -7$$
+Intersección: $-7 < x < -2$ ✓
+
+**Solución final:** $L = \{x \mid -7 < x < -2\} = (-7,-2)$
+:::
+
+## Valor Absoluto: Función de Distancia
+
+El **valor absoluto** $|a|$ representa la distancia del número $a$ al origen en la recta numérica.
+
+::: {.theorem-box}
+**Definición por Casos**
+
+$$|a| = \begin{cases} 
+a & \text{si } a \geq 0 \\
+-a & \text{si } a < 0
+\end{cases}$$
+:::
+
+**Propiedades Fundamentales:**
+
+- $|a| \geq 0$ para todo $a \in \mathbb{R}$
+- $|x - a|$ mide la distancia entre $x$ y $a$
+- $|a \cdot b| = |a| \cdot |b|$
+- Desigualdad triangular: $|a + b| \leq |a| + |b|$
+
+```{r}
+#| echo: true
+#| fig-cap: "Gráficas de funciones con valor absoluto"
+#| fig-width: 7
+#| fig-height: 5
+
+library(ggplot2)
+
+x <- seq(-4, 4, by = 0.01)
+datos <- data.frame(
+  x = rep(x, 3),
+  y = c(abs(x), abs(x - 1), abs(x) - 1),
+  funcion = rep(c("y = |x|", "y = |x-1|", "y = |x| - 1"), each = length(x))
+)
+
+ggplot(datos, aes(x = x, y = y, color = funcion)) +
+  geom_line(size = 1.2) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.5) +
+  scale_color_manual(values = c("#326891", "#cc0000", "#008060")) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        legend.title = element_blank(),
+        panel.grid.minor = element_blank()) +
+  labs(x = "x", y = "y",
+       title = "Funciones de Valor Absoluto") +
+  coord_cartesian(ylim = c(-2, 4))
+```
+
+## Ecuaciones con Valor Absoluto
+
+Las ecuaciones que contienen términos con valor absoluto requieren **distinción de casos** basada en el signo del argumento.
+
+::: {.example-box}
+**Resolución Exhaustiva por Casos**
+
+Resolver: $|x + 2| - 2|x - 3| = 4$
+
+**Puntos críticos:** $x = -2$ y $x = 3$ dividen la recta en tres intervalos.
+
+**Caso I** ($x < -2$): Ambos argumentos negativos
+$$-(x+2) - 2[-(x-3)] = 4$$
+$$-x-2+2x-6 = 4 \Rightarrow x = 12$$
+$12 \not< -2$: solución falsa (*Scheinlösung*) ✗
+
+**Caso II** ($-2 \leq x \leq 3$): Primer argumento positivo, segundo negativo
+$$(x+2) - 2[-(x-3)] = 4$$
+$$x+2+2x-6 = 4 \Rightarrow 3x = 8 \Rightarrow x = \frac{8}{3}$$
+$\frac{8}{3} \approx 2.67 \in [-2,3]$: solución válida ✓
+
+**Caso III** ($x > 3$): Ambos argumentos positivos
+$$(x+2) - 2(x-3) = 4$$
+$$x+2-2x+6 = 4 \Rightarrow x = 4$$
+$4 > 3$: solución válida ✓
+
+**Conjunto solución:** $L = \left\{\frac{8}{3}, 4\right\}$
+:::
+
+::: {.callout-warning}
+## Verificación Obligatoria
+
+Siempre se debe verificar cada solución candidata en la ecuación original para descartar soluciones falsas generadas por transformaciones no equivalentes.
+:::
+
+# Teoría Exhaustiva de Ecuaciones
+
+## Ecuaciones Lineales
+
+La forma canónica $ax + b = 0$ con $a \neq 0$ posee exactamente una solución:
+$$x = -\frac{b}{a}$$
+
+Esta solución única refleja la estructura de campo de $\mathbb{R}$.
+
+## Ecuaciones Cuadráticas
+
+La forma general $ax^2 + bx + c = 0$ se normaliza dividiendo por $a$ para obtener $x^2 + px + q = 0$ donde $p = b/a$ y $q = c/a$.
+
+::: {.theorem-box}
+**Fórmula $p,q$ (Forma Normalizada)**
+
+$$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$$
+:::
+
+El **discriminante** $D = \left(\frac{p}{2}\right)^2 - q$ determina completamente la naturaleza de las soluciones:
+
+| Discriminante | Soluciones |
+|--------------|------------|
+| $D > 0$ | Dos raíces reales distintas |
+| $D = 0$ | Raíz doble (solución única) |
+| $D < 0$ | Sin soluciones reales (soluciones complejas) |
+
+```{r}
+#| echo: true
+#| fig-cap: "Comportamiento de funciones cuadráticas según el discriminante"
+#| fig-width: 8
+#| fig-height: 5
+
+library(ggplot2)
+
+x <- seq(-3, 5, by = 0.01)
+
+datos <- data.frame(
+  x = rep(x, 3),
+  y = c(
+    x^2 - 4*x + 3,     # D > 0: dos raíces
+    x^2 - 4*x + 4,     # D = 0: raíz doble
+    x^2 - 4*x + 5      # D < 0: sin raíces
+  ),
+  caso = rep(c("D > 0 (dos raíces)", "D = 0 (raíz doble)", "D < 0 (sin raíces)"), 
+             each = length(x))
+)
+
+ggplot(datos, aes(x = x, y = y, color = caso)) +
+  geom_line(size = 1.2) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  scale_color_manual(values = c("#008060", "#326891", "#cc0000")) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        legend.title = element_blank()) +
+  labs(x = "x", y = "f(x)",
+       title = "Parábolas y el Discriminante") +
+  coord_cartesian(ylim = c(-2, 6))
+```
+
+## Ecuaciones de Grado Superior
+
+::: {.theorem-box}
+**Teorema Fundamental del Álgebra**
+
+Una ecuación polinómica de grado $n$ tiene como máximo $n$ soluciones reales (contando multiplicidades).
+:::
+
+### Ecuaciones Bicuadráticas
+
+Para ecuaciones del tipo $ax^4 + bx^2 + c = 0$:
+
+::: {.example-box}
+**Método de Sustitución**
+
+**Paso 1:** Sustituir $u = x^2$, obteniendo: $au^2 + bu + c = 0$
+
+**Paso 2:** Resolver la ecuación cuadrática en $u$ usando la fórmula $p,q$.
+
+**Paso 3:** Para cada solución positiva $u_i > 0$, calcular: $x = \pm\sqrt{u_i}$
+
+**Importante:** Solo las soluciones $u > 0$ producen valores reales de $x$.
+:::
+
+### Esquema de Horner
+
+Es una herramienta fundamental para:
+
+1. Evaluar polinomios de forma eficiente
+2. Realizar división sintética
+3. Reducir el grado de una ecuación si se conoce una raíz
+
+Si $x_1$ es raíz de $P(x)$, el esquema permite dividir por $(x - x_1)$ y reducir el grado del polinomio.
+
+## Ecuaciones Irracionales
+
+Son aquellas donde la incógnita aparece bajo un signo de raíz.
+
+::: {.callout-warning}
+## Advertencia Crítica
+
+Elevar al cuadrado **NO** es una transformación equivalente. Pueden aparecer **soluciones falsas** (*Scheinlösungen*). 
+
+La verificación en la ecuación original es **OBLIGATORIA**.
+:::
+
+**Método de resolución:**
+
+1. Aislar el término con la raíz
+2. Elevar al cuadrado (o a la potencia correspondiente)
+3. Resolver la ecuación resultante
+4. **Verificar todas las soluciones** en la ecuación original
+
+# Sistemas de Ecuaciones Lineales
+
+Un sistema de $m$ ecuaciones con $n$ incógnitas se puede representar de forma matricial como:
+
+$$A\mathbf{x} = \mathbf{c}$$
+
+## Representación Matricial Completa
+
+::: {.theorem-box}
+**Componentes del Sistema**
+
+**Matriz de coeficientes:**
+$$A = \begin{pmatrix} 
+a_{11} & a_{12} & \cdots & a_{1n} \\ 
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}$$
+
+**Vector solución:**
+$$\mathbf{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}$$
+
+**Vector de términos constantes:**
+$$\mathbf{c} = \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_m \end{pmatrix}$$
+
+**Matriz ampliada:**
+$$(A|\mathbf{c}) = \begin{pmatrix} 
+a_{11} & \cdots & a_{1n} & | & c_1 \\ 
+\vdots & \ddots & \vdots & | & \vdots \\
+a_{m1} & \cdots & a_{mn} & | & c_m
+\end{pmatrix}$$
+:::
+
+## Algoritmo de Gauss
+
+El método de eliminación de Gauss transforma el sistema en forma escalonada mediante **transformaciones equivalentes**:
+
+1. **Intercambiar** dos ecuaciones entre sí
+2. **Multiplicar** una ecuación por un número distinto de cero
+3. **Sumar** a una ecuación un múltiplo de otra
+
+**Objetivo:** Alcanzar una **forma trapezoidal** donde todos los elementos bajo la diagonal principal sean cero.
+
+```{r}
+#| echo: true
+#| label: ejemplo-gauss
+#| warning: false
+
+# Ejemplo: Resolver sistema 3x3 usando eliminación de Gauss
+# Sistema:
+#   x + 2y +  z = 9
+#  2x -  y + 3z = 8
+#  3x + 2y + 4z = 15
+
+# Matriz ampliada
+A_ampliada <- matrix(c(
+  1,  2,  1,  9,
+  2, -1,  3,  8,
+  3,  2,  4, 15
+), nrow = 3, byrow = TRUE)
+
+cat("Matriz ampliada inicial (A|c):\n")
+print(A_ampliada)
+
+# Paso 1: Eliminar x en filas 2 y 3
+A_ampliada[2,] <- A_ampliada[2,] - 2 * A_ampliada[1,]
+A_ampliada[3,] <- A_ampliada[3,] - 3 * A_ampliada[1,]
+
+cat("\nDespués de eliminar x en filas 2 y 3:\n")
+print(A_ampliada)
+
+# Paso 2: Eliminar y en fila 3
+A_ampliada[3,] <- A_ampliada[3,] - (A_ampliada[3,2] / A_ampliada[2,2]) * A_ampliada[2,]
+
+cat("\nForma escalonada (trapezoidal):\n")
+print(A_ampliada)
+
+# Paso 3: Sustitución regresiva
+z <- A_ampliada[3,4] / A_ampliada[3,3]
+y <- (A_ampliada[2,4] - A_ampliada[2,3] * z) / A_ampliada[2,2]
+x <- (A_ampliada[1,4] - A_ampliada[1,3] * z - A_ampliada[1,2] * y) / A_ampliada[1,1]
+
+cat("\nSolución del sistema:\n")
+cat(sprintf("x = %.4f\n", x))
+cat(sprintf("y = %.4f\n", y))
+cat(sprintf("z = %.4f\n", z))
+```
+
+## Análisis de Solubilidad
+
+::: {.theorem-box}
+**Criterio Fundamental de Solubilidad**
+
+Un sistema es resoluble (tiene al menos una solución) si y solo si:
+$Rg(A) = Rg(A|\mathbf{c})$
+
+donde $Rg$ denota el rango de la matriz.
+:::
+
+**Clasificación según el rango $r$:**
+
+| Condición | Tipo de Sistema | Soluciones |
+|-----------|----------------|------------|
+| $r = n$ | Compatible determinado | Solución única |
+| $r < n$ | Compatible indeterminado | Infinitas ($n-r$ parámetros) |
+| $Rg(A) < Rg(A\|\mathbf{c})$ | Incompatible | Sin solución |
+
+: Comportamiento de sistemas lineales según el rango {#tbl-sistemas}
+
+```{r}
+#| echo: true
+#| fig-cap: "Visualización de sistemas 2x2: único, infinitos y sin solución"
+#| fig-width: 10
+#| fig-height: 4
+#| warning: false
+
+library(ggplot2)
+library(patchwork)
+
+x <- seq(-2, 5, by = 0.01)
+
+# Sistema con solución única
+p1 <- ggplot() +
+  geom_abline(slope = -1/2, intercept = 3, color = "#326891", size = 1.2) +
+  geom_abline(slope = 2, intercept = -1, color = "#cc0000", size = 1.2) +
+  geom_point(aes(x = 2, y = 2), size = 4, color = "#008060") +
+  annotate("text", x = 2, y = 2.5, label = "(2, 2)", color = "#008060", fontface = "bold") +
+  coord_cartesian(xlim = c(-1, 5), ylim = c(-1, 5)) +
+  theme_minimal() +
+  labs(title = "Solución Única", x = "x", y = "y") +
+  theme(plot.title = element_text(face = "bold", hjust = 0.5))
+
+# Sistema con infinitas soluciones (rectas coincidentes)
+p2 <- ggplot() +
+  geom_abline(slope = 1, intercept = 1, color = "#326891", size = 1.2) +
+  geom_abline(slope = 1, intercept = 1, color = "#cc0000", size = 1.2, linetype = "dashed") +
+  annotate("text", x = 2, y = 3.5, label = "Infinitas soluciones\n(rectas coincidentes)", 
+           color = "#326891", fontface = "bold", size = 3) +
+  coord_cartesian(xlim = c(-1, 5), ylim = c(-1, 5)) +
+  theme_minimal() +
+  labs(title = "Infinitas Soluciones", x = "x", y = "y") +
+  theme(plot.title = element_text(face = "bold", hjust = 0.5))
+
+# Sistema sin solución (rectas paralelas)
+p3 <- ggplot() +
+  geom_abline(slope = 1, intercept = 1, color = "#326891", size = 1.2) +
+  geom_abline(slope = 1, intercept = 3, color = "#cc0000", size = 1.2) +
+  annotate("text", x = 2, y = 4.5, label = "Sin solución\n(paralelas)", 
+           color = "#cc0000", fontface = "bold", size = 3) +
+  coord_cartesian(xlim = c(-1, 5), ylim = c(-1, 5)) +
+  theme_minimal() +
+  labs(title = "Sin Solución", x = "x", y = "y") +
+  theme(plot.title = element_text(face = "bold", hjust = 0.5))
+
+p1 + p2 + p3
+```
+
+## Regla de Cramer
+
+Para sistemas cuadrados ($n \times n$) con matriz regular ($\det(A) \neq 0$):
+
+::: {.theorem-box}
+**Fórmula de Cramer**
+
+$x_i = \frac{\det(A_i)}{\det(A)}$
+
+donde $A_i$ es la matriz $A$ con la columna $i$ reemplazada por el vector $\mathbf{c}$.
+:::
+
+```{r}
+#| echo: true
+#| label: cramer-example
+
+# Ejemplo con Regla de Cramer
+# Sistema: 2x + 3y = 8
+#          x - y = -1
+
+A <- matrix(c(2, 3, 1, -1), nrow = 2, byrow = TRUE)
+c_vec <- c(8, -1)
+
+cat("Sistema de ecuaciones:\n")
+cat("2x + 3y = 8\n")
+cat(" x -  y = -1\n\n")
+
+# Determinante de A
+det_A <- det(A)
+cat(sprintf("det(A) = %.0f\n\n", det_A))
+
+# A1: reemplazar primera columna con c
+A1 <- A
+A1[,1] <- c_vec
+det_A1 <- det(A1)
+
+# A2: reemplazar segunda columna con c
+A2 <- A
+A2[,2] <- c_vec
+det_A2 <- det(A2)
+
+# Soluciones
+x <- det_A1 / det_A
+y <- det_A2 / det_A
+
+cat(sprintf("x = det(A1)/det(A) = %.0f/%.0f = %.0f\n", det_A1, det_A, x))
+cat(sprintf("y = det(A2)/det(A) = %.0f/%.0f = %.0f\n", det_A2, det_A, y))
+```
+
+## Aplicación: Circuitos Eléctricos
+
+Las **Reglas de Kirchhoff** permiten analizar redes eléctricas usando sistemas de ecuaciones lineales.
+
+::: {.example-box}
+**Análisis de Red con Tres Corrientes**
+
+Para un circuito con resistencias $R_1, R_2, R_3$ y fuente de tensión $U$:
+
+**Regla de los Nudos (*Knotenpunktsregel*):**
+$I_1 - I_2 - I_3 = 0$
+
+La suma de corrientes entrantes y salientes en un nudo es cero.
+
+**Reglas de las Mallas (*Maschenregel*):**
+$R_1 I_1 + R_2 I_2 = U$
+$R_2 I_2 - R_3 I_3 = 0$
+
+En cada malla, la suma de tensiones es cero.
+
+**Matriz del Sistema:**
+$A = \begin{pmatrix} 
+1 & -1 & -1 \\ 
+R_1 & R_2 & 0 \\ 
+0 & R_2 & -R_3 
+\end{pmatrix}$
+:::
+
+```{r}
+#| echo: true
+#| label: circuito-kirchhoff
+
+# Resolver circuito eléctrico
+# Valores: R1 = 2Ω, R2 = 3Ω, R3 = 4Ω, U = 12V
+
+R1 <- 2
+R2 <- 3
+R3 <- 4
+U <- 12
+
+# Matriz de coeficientes
+A_circuito <- matrix(c(
+  1, -1, -1,
+  R1, R2, 0,
+  0, R2, -R3
+), nrow = 3, byrow = TRUE)
+
+c_circuito <- c(0, U, 0)
+
+cat("Sistema del circuito eléctrico:\n")
+cat(sprintf("I1 - I2 - I3 = 0\n"))
+cat(sprintf("%.0f*I1 + %.0f*I2 = %.0f\n", R1, R2, U))
+cat(sprintf("%.0f*I2 - %.0f*I3 = 0\n\n", R2, R3))
+
+# Resolver usando solve()
+corrientes <- solve(A_circuito, c_circuito)
+
+cat("Corrientes del circuito:\n")
+cat(sprintf("I1 = %.4f A\n", corrientes[1]))
+cat(sprintf("I2 = %.4f A\n", corrientes[2]))
+cat(sprintf("I3 = %.4f A\n", corrientes[3]))
+
+# Verificación
+cat("\nVerificación de las ecuaciones:\n")
+cat(sprintf("I1 - I2 - I3 = %.6f (≈ 0) ✓\n", 
+            corrientes[1] - corrientes[2] - corrientes[3]))
+cat(sprintf("R1*I1 + R2*I2 = %.4f (= %.0f) ✓\n", 
+            R1*corrientes[1] + R2*corrientes[2], U))
+cat(sprintf("R2*I2 - R3*I3 = %.6f (≈ 0) ✓\n", 
+            R2*corrientes[2] - R3*corrientes[3]))
+```
+
+# Triángulo de Pascal y Binomio de Newton
+
+## Construcción del Triángulo de Pascal
+
+El **Triángulo de Pascal** es un esquema numérico infinito que permite determinar directamente los **coeficientes binomiales** $\binom{n}{k}$.
+
+::: {.theorem-box}
+**Reglas de Construcción**
+
+1. **Bordes laterales:** Todos son 1
+2. **Valores internos:** Cada número es la suma de los dos números superiores
+3. **Propiedad recursiva:**
+   $\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}$
+:::
+
+```{r}
+#| echo: true
+#| label: triangulo-pascal
+#| fig-cap: "Triángulo de Pascal (primeras 10 filas)"
+#| fig-width: 8
+#| fig-height: 6
+
+library(ggplot2)
+
+# Función para calcular coeficientes binomiales
+generar_pascal <- function(n_filas) {
+  triangulo <- list()
+  for (n in 0:(n_filas-1)) {
+    fila <- sapply(0:n, function(k) choose(n, k))
+    triangulo[[n+1]] <- fila
+  }
+  return(triangulo)
+}
+
+# Generar triángulo
+n_filas <- 10
+triangulo <- generar_pascal(n_filas)
+
+# Crear datos para visualización
+datos_pascal <- data.frame()
+for (n in 0:(n_filas-1)) {
+  fila <- triangulo[[n+1]]
+  for (k in 0:n) {
+    datos_pascal <- rbind(datos_pascal, data.frame(
+      x = k - n/2,
+      y = -n,
+      valor = fila[k+1],
+      n = n,
+      k = k
+    ))
+  }
+}
+
+# Visualizar
+ggplot(datos_pascal, aes(x = x, y = y)) +
+  geom_point(aes(color = log10(valor + 1)), size = 8) +
+  geom_text(aes(label = valor), color = "white", fontface = "bold", size = 3) +
+  scale_color_gradient(low = "#326891", high = "#cc0000") +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5, face = "bold", size = 14)) +
+  labs(title = "Triángulo de Pascal") +
+  coord_fixed()
+```
+
+## Binomio de Newton
+
+El triángulo de Pascal proporciona los coeficientes para la expansión de potencias de binomios:
+
+::: {.theorem-box}
+**Fórmula del Binomio de Newton**
+
+$(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$
+
+donde $\binom{n}{k}$ se lee "$n$ sobre $k$" y se calcula como:
+$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+:::
+
+::: {.example-box}
+**Ejemplos de Desarrollo**
+
+**Para $n = 2$:** Coeficientes 1, 2, 1
+$(a + b)^2 = a^2 + 2ab + b^2$
+
+**Para $n = 3$:** Coeficientes 1, 3, 3, 1
+$(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$
+
+**Para $n = 4$:** Coeficientes 1, 4, 6, 4, 1
+$(a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$
+:::
+
+```{r}
+#| echo: true
+#| label: binomio-expansion
+
+# Función para expandir (a + b)^n simbólicamente
+expandir_binomio <- function(n) {
+  coef <- choose(n, 0:n)
+  cat(sprintf("(a + b)^%d = ", n))
+  
+  terminos <- character()
+  for (k in 0:n) {
+    # Coeficiente
+    if (coef[k+1] == 1 && k > 0 && k < n) {
+      coef_str <- ""
+    } else if (coef[k+1] == 1) {
+      coef_str <- if (k == 0 || k == n) "1" else ""
+    } else {
+      coef_str <- as.character(coef[k+1])
+    }
+    
+    # Potencia de a
+    pot_a <- n - k
+    a_str <- if (pot_a == 0) "" else if (pot_a == 1) "a" else sprintf("a^%d", pot_a)
+    
+    # Potencia de b
+    pot_b <- k
+    b_str <- if (pot_b == 0) "" else if (pot_b == 1) "b" else sprintf("b^%d", pot_b)
+    
+    # Combinar
+    termino <- paste0(coef_str, a_str, b_str)
+    if (termino == "") termino <- "1"
+    terminos <- c(terminos, termino)
+  }
+  
+  cat(paste(terminos, collapse = " + "), "\n\n")
+}
+
+# Ejemplos
+for (n in 2:6) {
+  expandir_binomio(n)
+}
+```
+
+# Método de Newton para Ecuaciones No Lineales
+
+Para ecuaciones trascendentes o complejas sin solución analítica, el **Método de Newton** (*Tangentenverfahren*) proporciona aproximaciones iterativas de alta precisión.
+
+::: {.theorem-box}
+**Fórmula Iterativa de Newton**
+
+$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
+
+**Características:**
+- Convergencia cuadrática cerca de la raíz
+- Requiere calcular la derivada $f'(x)$
+- Sensible a la elección del punto inicial $x_0$
+:::
+
+```{r}
+#| echo: true
+#| label: metodo-newton
+#| fig-cap: "Convergencia del Método de Newton para f(x) = x² - 2"
+#| fig-width: 8
+#| fig-height: 6
+
+library(ggplot2)
+
+# Función y su derivada
+f <- function(x) x^2 - 2
+f_prima <- function(x) 2*x
+
+# Método de Newton
+newton <- function(x0, f, f_prima, tol = 1e-10, max_iter = 20) {
+  x <- x0
+  iteraciones <- data.frame(n = 0, x = x0, fx = f(x0))
+  
+  for (i in 1:max_iter) {
+    x_nuevo <- x - f(x) / f_prima(x)
+    iteraciones <- rbind(iteraciones, data.frame(
+      n = i, 
+      x = x_nuevo, 
+      fx = f(x_nuevo)
+    ))
+    
+    if (abs(x_nuevo - x) < tol) break
+    x <- x_nuevo
+  }
+  
+  return(iteraciones)
+}
+
+# Ejecutar Newton con x0 = 2
+resultado <- newton(x0 = 2, f, f_prima)
+
+cat("Método de Newton para encontrar √2\n")
+cat("Ecuación: f(x) = x² - 2 = 0\n\n")
+print(resultado, digits = 10)
+
+# Visualización
+x_vals <- seq(0.5, 3, by = 0.01)
+datos_func <- data.frame(x = x_vals, y = f(x_vals))
+
+# Crear gráfico
+p <- ggplot() +
+  geom_line(data = datos_func, aes(x = x, y = y), 
+            color = "#326891", size = 1.2) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  geom_vline(xintercept = sqrt(2), linetype = "dotted", 
+             color = "#008060", size = 1) +
+  theme_minimal() +
+  labs(x = "x", y = "f(x)", 
+       title = "Método de Newton: f(x) = x² - 2")
+
+# Añadir iteraciones
+for (i in 1:min(4, nrow(resultado))) {
+  xi <- resultado$x[i]
+  yi <- resultado$fx[i]
+  
+  # Punto
+  p <- p + geom_point(aes(x = xi, y = yi), 
+                      color = "#cc0000", size = 3)
+  
+  # Tangente (solo primeras 3 iteraciones)
+  if (i <= 3) {
+    m <- f_prima(xi)
+    x_tang <- seq(max(0.5, xi - 1), min(3, xi + 1), length.out = 50)
+    y_tang <- yi + m * (x_tang - xi)
+    
+    p <- p + geom_line(aes(x = x_tang, y = y_tang), 
+                       color = "#e67e22", linetype = "dashed", 
+                       alpha = 0.7)
+  }
+}
+
+print(p)
+```
+
+```{r}
+#| echo: true
+#| label: newton-comparacion
+#| fig-cap: "Comparación de convergencia según punto inicial"
+#| fig-width: 9
+#| fig-height: 5
+
+# Probar diferentes puntos iniciales
+puntos_iniciales <- c(0.5, 1, 2, 3)
+resultados_todos <- list()
+
+for (x0 in puntos_iniciales) {
+  res <- newton(x0, f, f_prima, max_iter = 10)
+  res$x0 <- x0
+  resultados_todos[[length(resultados_todos) + 1]] <- res
+}
+
+datos_conv <- do.call(rbind, resultados_todos)
+
+ggplot(datos_conv, aes(x = n, y = abs(x - sqrt(2)), color = factor(x0))) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2.5) +
+  scale_y_log10() +
+  scale_color_manual(values = c("#326891", "#cc0000", "#008060", "#e67e22"),
+                     name = "Punto inicial x₀") +
+  theme_minimal() +
+  theme(legend.position = "top") +
+  labs(x = "Iteración n", 
+       y = "|xₙ - √2| (escala logarítmica)",
+       title = "Convergencia del Método de Newton",
+       subtitle = "Velocidad de convergencia según punto inicial")
+```
+
+# Conclusiones y Síntesis
+
+## Resumen Estructural
+
+Los fundamentos matemáticos presentados en este documento constituyen el **andamiaje conceptual** sobre el cual se erigen todas las disciplinas científico-técnicas modernas:
+
+::: {.callout-tip}
+## Jerarquía Conceptual
+
+1. **Teoría de Conjuntos** → Proporciona el lenguaje lógico fundamental
+2. **Números Reales** → Establecen la métrica y el continuo
+3. **Ecuaciones** → Mecanismo de modelado matemático
+4. **Sistemas Lineales** → Estructura para problemas multivariables
+5. **Métodos Numéricos** → Herramientas computacionales prácticas
+:::
+
+## Principios Fundamentales para Ingenieros
+
+De acuerdo con Papula [-@papula2024], el rigor matemático en ingeniería se fundamenta en:
+
+- **Precisión lógica:** Toda afirmación debe ser verificable
+- **Coherencia estructural:** Los sistemas deben ser consistentes
+- **Aplicabilidad práctica:** Los conceptos deben resolver problemas reales
+- **Generalización:** Las soluciones particulares revelan patrones universales
+
+## Próximos Temas
+
+En volúmenes posteriores se abordarán:
+
+- Álgebra vectorial y geometría analítica
+- Funciones y límites
+- Cálculo diferencial e integral
+- Ecuaciones diferenciales
+- Series y transformadas
+
+---
+
+# Referencias
+
+::: {#refs}
+:::
+
+---
+
+::: {.callout-note icon=false}
+## 📚 Información del Documento
+
+**Fuente Principal:** Papula, L. (2024). *Mathematik für Ingenieure und Naturwissenschaftler, Band 1* (16.ª edición). Springer Vieweg.  
+**ISBN:** 978-3-658-45801-0  
+**DOI:** [10.1007/978-3-658-45802-7](https://doi.org/10.1007/978-3-658-45802-7)
+
+**Autor del Documento:** Emanuel Quintana Silva  
+**Afiliación:** Universidad Pedagógica y Tecnológica de Colombia (UPTC)  
+**Especialización:** Econometría Computacional | Aplicaciones R/Python  
+**Contacto:** emanuel.quintana@uptc.edu.co  
+**ORCID:** [0009-0006-8419-2805](https://orcid.org/0009-0006-8419-2805)
+
+---
+
+**THE SCIENCE TIMES** | MATHEMATISCHE GRUNDLAGEN | ENERO 2026
+<!-- ::: -->
