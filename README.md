@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Ingenieria Quimica</h1>
+  <h1>Ingenieria Quimica.</h1>
 </div>
 
 ---
