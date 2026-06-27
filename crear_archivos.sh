@@ -2,20 +2,17 @@
 
 BASE="MATEMATICAS-ESTRUCTURA"
 
-# Verificar que existe la estructura
 if [ ! -d "$BASE" ]; then
     echo "Error: No existe el directorio $BASE"
     exit 1
 fi
 
-# Función para crear archivos vacíos en una carpeta
 crear_archivos_en_carpeta() {
     local carpeta="$1"
     local nombre=$(basename "$carpeta")
     
     echo "En carpeta: $nombre"
     
-    # Crear archivos básicos
     touch "$carpeta/apuntes.tex"
     touch "$carpeta/ejercicios.qmd"
     touch "$carpeta/notas.Rmd"
