@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Base directory
 BASE="MATEMATICAS-ESTRUCTURA"
 
 # Verificar que existe la estructura
