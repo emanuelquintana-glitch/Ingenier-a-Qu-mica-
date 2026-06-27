@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "Creando archivos en estructura existente..."
-echo "============================================"
-
 # Base directory
 BASE="MATEMATICAS-ESTRUCTURA"
 
