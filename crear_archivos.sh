@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Script para crear archivos .tex, .qmd, .Rmd, .R, .py, .ipynb, etc.
-
-
 echo "Creando archivos en estructura existente..."
 echo "============================================"
 
