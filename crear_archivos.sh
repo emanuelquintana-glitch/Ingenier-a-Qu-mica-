@@ -10,7 +10,7 @@ echo "============================================"
 BASE="MATEMATICAS-ESTRUCTURA"
 
 # Verificar que existe la estructura
-if [ ! -d "$BASE" ]; then--
+if [ ! -d "$BASE" ]; then
     echo "Error: No existe el directorio $BASE"
     exit 1
 fi
